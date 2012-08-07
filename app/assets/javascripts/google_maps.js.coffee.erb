@@ -1,0 +1,68 @@
+$ ->
+  $('#map').each ->
+    map = new google.maps.Map(this,
+      zoom: 8
+      center: new google.maps.LatLng(52.459, 13.387)
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    )
+
+    locations = window.locations || []
+    for location in locations
+      do ->
+        position = new google.maps.LatLng(location.latitude, location.longitude)
+
+        icon = new google.maps.MarkerImage(
+          "<%= asset_path('marker/rot.png') %>",
+          new google.maps.Size(21, 30),
+          new google.maps.Point(0,0),
+          new google.maps.Point(0, 30)
+        )
+
+        marker = new google.maps.Marker
+          position: position
+          map: map
+          title: location.name
+          icon: icon
+
+        coordInfoWindow = new google.maps.InfoWindow()
+        coordInfoWindow.setContent('<a href="' + location.url + '">goto</a>')
+        coordInfoWindow.setPosition(position)
+
+        google.maps.event.addListener(marker, 'click', ->
+          coordInfoWindow.open(map)
+          # window.location.href = location.url
+        )
+
+    # edit form
+    if $('#location_latitude').length == 1
+      newMarker = undefined
+      latitudeInput = $('#location_latitude')
+      longitudeInput = $('#location_longitude')
+      latitude = latitudeInput.val()
+      longitude = longitudeInput.val()
+
+      updateInput = (latLng) ->
+        latitudeInput.val(latLng.lat())
+        longitudeInput.val(latLng.lng())
+
+      updateMarkerPosition = (latLng) ->
+        # create or update maker
+        if !newMarker?
+          newMarker = new google.maps.Marker
+            position: latLng
+            map: map
+            draggable: true
+          google.maps.event.addListener(newMarker, 'dragged', (event) ->
+            updateInput(event.latLng)
+          )
+        else
+          newMarker.setPosition(latLng)
+
+      # check for existing marker (edit)
+      if latitude != '' and longitude != ''
+        updateMarkerPosition(new google.maps.LatLng(latitude, longitude))
+
+      google.maps.event.addListener(map, 'click', (event) ->
+        updateMarkerPosition(event.latLng)
+        updateInput(event.latLng)
+      )

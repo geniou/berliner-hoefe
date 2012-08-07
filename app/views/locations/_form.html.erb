@@ -20,13 +20,8 @@
     <%= f.label :type %><br />
     <%= f.text_field :type %>
   </p>
-  <p>
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
-  </p>
-  <p>
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
-  </p>
+  <div id="map" class="map"></div>
+  <%= f.hidden_field :latitude %>
+  <%= f.hidden_field :longitude %>
   <p><%= f.submit %></p>
 <% end %>

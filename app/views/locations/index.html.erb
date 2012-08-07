@@ -27,8 +27,8 @@
 </table>
 
 <script type="text/javascript">
-  var locations = <%= map_data(@locations) %> 
+  window.locations = <%= map_data(@locations) %> 
 </script>
-<div id="map_canvas" class="map"></div>
+<div id="map" class="map"></div>
 
 <p><%= link_to "New Location", new_location_path %></p>
