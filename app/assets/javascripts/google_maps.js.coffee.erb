@@ -6,7 +6,7 @@ $ ->
       mapTypeId: google.maps.MapTypeId.ROADMAP
     )
 
-    locations = window.locations || []
+    locations = app.map.locations || []
     for location in locations
       do ->
         position = new google.maps.LatLng(location.latitude, location.longitude)
