@@ -20,15 +20,10 @@
       <td><%= location.latitude %></td>
       <td><%= location.longitude %></td>
       <td><%= link_to "Show", location %></td>
-      <td><%= link_to "Edit", edit_location_path(location) %></td>
-      <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to "Edit", edit_admin_location_path(location) %></td>
+      <td><%= link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
 
-<script type="text/javascript">
-  app.map.locations = <%= map_data(@locations) %> 
-</script>
-<div id="map" class="map"></div>
-
-<p><%= link_to "New Location", new_location_path %></p>
+<p><%= link_to "New Location", new_admin_location_path %></p>

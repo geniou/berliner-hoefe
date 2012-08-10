@@ -1,7 +1,12 @@
 BerlinerHoefe::Application.routes.draw do
+  root :to => 'root#index'
+
   resources :locations, :path => 'hof'
 
-  root :to => 'locations#index'
+  namespace :admin do
+    resources :locations
+  end
+
   #
   # The priority is based upon order of creation:
   # first created -> highest priority.
