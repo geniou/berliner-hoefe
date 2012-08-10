@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? "#{yield(:title)} | " : "" %>Berliner Höfe</title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false" %>
     <%= javascript_include_tag "application" %>
@@ -9,12 +9,20 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
-      <%= yield %>
+    <div id="header">
+      <div class="container">
+        <div id="logo"></div>
+        <h1><%= content_for?(:title) ? yield(:title) : '' %></h1>
+      </div>
+    </div>
+    <div id="content">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+      </div>
     </div>
   </body>
 </html>

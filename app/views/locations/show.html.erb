@@ -1,30 +1,19 @@
-<% title "Location" %>
+<% title @location.name %>
+<script type="text/javascript">
+  app.map.locations = <%= map_data(@location) %> 
+</script>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @location.description %>
-</p>
-<p>
-  <strong>Published On:</strong>
-  <%= @location.published_on %>
-</p>
-<p>
-  <strong>Slug:</strong>
-  <%= @location.slug %>
-</p>
-<p>
-  <strong>Type:</strong>
-  <%= @location.type %>
-</p>
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
-<p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
-</p>
+<div class="columns">
+  <div class="column wide">
+    <p>
+      <%= @location.description %>
+    </p>
+    <p>
+      <strong>Type:</strong>
+      <%= @location.type %>
+    </p>
+  </div>
+  <div class="column last">
+    <div id="map" class="map"></div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   def map_data(locations)
+    locations = [locations] unless locations.is_a?(Array)
     locations.map do |location|
       {
         :name => location.name,
