@@ -24,13 +24,15 @@ $ ->
           title: location.name
           icon: icon
 
-        coordInfoWindow = new google.maps.InfoWindow()
-        coordInfoWindow.setContent('<a href="' + location.url + '">goto</a>')
-        coordInfoWindow.setPosition(position)
+        info = new InfoBox(
+          content: '<a href="' + location.url + '">goto</a>'
+          alignBottom: true
+          pixelOffset: new google.maps.Size(0, -40)
+        )
 
         google.maps.event.addListener(marker, 'click', ->
-          coordInfoWindow.open(map)
-          # window.location.href = location.url
+          # info.open(map, marker)
+          window.location.href = location.url
         )
 
     # edit form
