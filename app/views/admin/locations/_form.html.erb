@@ -1,27 +1,14 @@
-<%= form_for @location, url: admin_location_path do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.label :published_on %><br />
-    <%= f.datetime_select :published_on %>
-  </p>
-  <p>
-    <%= f.label :slug %><br />
-    <%= f.text_field :slug %>
-  </p>
-  <p>
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
-  </p>
+<%= semantic_form_for @location, url: admin_location_path do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :slug, label: "URL", required: false %>
+    <%= f.input :type, as: :select, collection: ['living', 'industrie'], include_blank: false %>
+  <% end %>
   <div id="map" class="map"></div>
   <%= f.hidden_field :latitude %>
   <%= f.hidden_field :longitude %>
-  <p><%= f.submit %></p>
+  <%= f.actions do %>
+    <%= f.action :submit %>
+  <% end %>
 <% end %>

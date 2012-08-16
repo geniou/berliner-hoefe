@@ -40,6 +40,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    formtastic (2.2.1)
+      actionpack (>= 3.0)
     friendly_id (4.0.8)
     geocoder (1.1.2)
     hike (1.2.1)
@@ -114,6 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  formtastic
   friendly_id
   geocoder
   jquery-rails

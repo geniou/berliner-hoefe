@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'geocoder'
 gem 'friendly_id'
 gem 'rb-readline'
+gem 'formtastic'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
