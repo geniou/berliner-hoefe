@@ -34,6 +34,10 @@ $ ->
           # info.open(map, marker)
           window.location.href = location.url
         )
+    if locations.length  == 1
+      location = locations[0]
+      map.setCenter(new google.maps.LatLng(location.latitude, location.longitude))
+      map.setZoom(12)
 
     # edit form
     if $('#location_latitude').length == 1

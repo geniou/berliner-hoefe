@@ -32,8 +32,8 @@ h1 {
   .map {
     box-shadow: 1px 1px 5px black;
     border: 10px solid white;
-    width: 200px;
-    height: 100px;
+    width: 100%;
+    height: 250px;
     &.main {
       margin-top: -100px;
       width: 100%;
@@ -44,7 +44,7 @@ h1 {
 
 #header, #content, #footer {
   > .container {
-    width: 1000px;
+    width: $total_width;
     display: block;
     position: relative;
     margin: 0 auto;
@@ -53,14 +53,12 @@ h1 {
 
 .columns {
   .column {
-    width: $total_width / 3 - ($column_spacing * 2);
+    width: ($total_width * 0.618) - ($column_spacing + 5 / 2);
     margin-right: $column_spacing;
     display: inline-block;
     vertical-align: top;
-    &.wide {
-      width: (2 * $total_width / 3) - $column_spacing;
-    }
     &.last {
+      width: ($total_width * 0.382) - ($column_spacing + 5 / 2);
       margin-right: 0;
     }
   }
