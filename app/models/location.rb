@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  attr_accessible :name, :description, :published_on, :slug, :type, :latitude, :longitude
+  attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude
   
   extend FriendlyId
   friendly_id :name, use: :slugged

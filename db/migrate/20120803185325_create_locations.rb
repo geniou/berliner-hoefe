@@ -5,7 +5,8 @@ class CreateLocations < ActiveRecord::Migration
       t.text :description
       t.timestamp :published_on
       t.string :slug
-      t.string :type
+      t.string :classification
+      t.boolean :show_detail
       t.float :latitude
       t.float :longitude
       t.timestamps

@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(:version => 20120803185325) do
     t.text     "description"
     t.datetime "published_on"
     t.string   "slug"
-    t.string   "type"
+    t.string   "classification"
+    t.boolean  "show_detail"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "locations", ["slug"], :name => "index_locations_on_slug", :unique => true

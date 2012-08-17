@@ -1,9 +1,9 @@
-<%= semantic_form_for @location, url: admin_location_path do |f| %>
+<%= semantic_form_for @location do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :slug, label: "URL", required: false %>
-    <%= f.input :type, as: :select, collection: ['living', 'industrie'], include_blank: false %>
+    <%= f.input :classification, as: :select, collection: ['living', 'industrie'], include_blank: false %>
   <% end %>
   <div id="map" class="map"></div>
   <%= f.hidden_field :latitude %>
