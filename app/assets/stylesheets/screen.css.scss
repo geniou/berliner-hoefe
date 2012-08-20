@@ -48,9 +48,12 @@ a {
     box-shadow: 1px 1px 5px black;
     border: 10px solid white;
     margin-top: -100px;
-    > .map {
+    &.main > .map {
       width: $main_column_width;
       height: 500px;
+    }
+    &.show > .map {
+      width: 100%;
     }
   }
   .newest {
@@ -62,12 +65,29 @@ a {
       margin: 0;
       padding: 0;
       li {
-        padding: 10px;
-        height: 42.5px;
+        font-family: 'Lancelot', cursive;
+        font-size: 1.3em;
         border-bottom: 1px solid $gray;
-        &:hover {
-          background-color: $primary_color;
-          color: white;
+        a {
+          padding: 10px;
+          height: 41.5px;
+          line-height: 41.5px;
+          width: $sidebar_column_width - 20;
+          display: block;
+          &:hover {
+            background-color: $primary_color;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            &:after {
+              content: '>';
+              color: white;
+              position: absolute;
+              right: 10px;
+              line-height: 41.5px;
+              font-size: 30px;
+            }
+          }
         }
       }
     } 

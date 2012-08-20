@@ -1,7 +1,7 @@
 class Location < ActiveRecord::Base
   attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude
 
-  scope :newest, order: "published_on DESC", limit: 10
+  scope :newest, order: "published_on DESC", limit: 8
 
   extend FriendlyId
   friendly_id :name, use: :slugged
