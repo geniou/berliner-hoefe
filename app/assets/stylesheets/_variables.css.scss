@@ -4,5 +4,7 @@ $gray: #e3e3e3;
 $dark_gray: #3e3e3e;
 $super_dark_gray: darken(#3e3e3e, 10);
 
-$total_width: 1000px;
 $column_spacing: 20px;
+$total_width: 1000px;
+$main_column_width: ($total_width * 0.618) - ($column_spacing + 5 / 2);
+$sidebar_column_width: ($total_width * 0.382) - ($column_spacing + 5 / 2);

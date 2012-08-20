@@ -1,6 +1,7 @@
 $ ->
-  $('#map').each ->
-    map = new google.maps.Map(this,
+  $('.map').each ->
+    container = jQuery('<div />').appendTo(jQuery(this))
+    map = new google.maps.Map(container[0],
       zoom: app.config.map.default.zoom
       center: new google.maps.LatLng(app.config.map.default.center.latitude, app.config.map.default.center.longitude)
       mapTypeId: google.maps.MapTypeId.ROADMAP

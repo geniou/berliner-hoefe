@@ -8,12 +8,10 @@
     <p>
       <%= simple_format(@location.description) %>
     </p>
-    <p>
-      <strong>Type:</strong>
-      <%= @location.classification %>
-    </p>
   </div>
   <div class="column last">
-    <div id="map" class="map"></div>
+    <div class="locations main">
+      <div class="map"></div>
+    </div>
   </div>
 </div>

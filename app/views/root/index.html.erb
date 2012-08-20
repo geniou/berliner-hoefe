@@ -1,4 +1,13 @@
 <script type="text/javascript">
   app.map.locations = <%= map_data(@locations) %> 
 </script>
-<div id="map" class="map main"></div>
+<div class="locations">
+  <div class="newest">
+    <ul>
+    <% @newest.each do |location| %>
+      <li><a href="<%= location_path(location) %>"><%= location.name %></a></li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="map"></div>
+</div>

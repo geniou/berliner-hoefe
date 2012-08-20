@@ -26,19 +26,51 @@ h1 {
   }
 }
 
+a {
+  color: $primary_color;
+  text-decoration: none;
+}
+
+.map {
+  width: 450px;
+  height: 250px;
+  > div {
+    height: 100%;
+    width: 100%;
+  }
+}
+
 #content {
   background: $dark_gray;
   padding: 50px 0;
-  .map {
+  .locations {
+    background: white;
     box-shadow: 1px 1px 5px black;
     border: 10px solid white;
-    width: 100%;
-    height: 250px;
-    &.main {
-      margin-top: -100px;
-      width: 100%;
+    margin-top: -100px;
+    > .map {
+      width: $main_column_width;
       height: 500px;
     }
+  }
+  .newest {
+    width: $sidebar_column_width;
+    float: right;
+    color: $dark_gray;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        padding: 10px;
+        height: 42.5px;
+        border-bottom: 1px solid $gray;
+        &:hover {
+          background-color: $primary_color;
+          color: white;
+        }
+      }
+    } 
   }
 }
 
@@ -53,12 +85,12 @@ h1 {
 
 .columns {
   .column {
-    width: ($total_width * 0.618) - ($column_spacing + 5 / 2);
+    width: $main_column_width;
     margin-right: $column_spacing;
     display: inline-block;
     vertical-align: top;
     &.last {
-      width: ($total_width * 0.382) - ($column_spacing + 5 / 2);
+      width: $sidebar_column_width;
       margin-right: 0;
     }
   }
