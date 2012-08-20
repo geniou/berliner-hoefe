@@ -1,8 +1,8 @@
 $ ->
   $('#map').each ->
     map = new google.maps.Map(this,
-      zoom: 8
-      center: new google.maps.LatLng(52.459, 13.387)
+      zoom: app.config.map.default.zoom
+      center: new google.maps.LatLng(app.config.map.default.center.latitude, app.config.map.default.center.longitude)
       mapTypeId: google.maps.MapTypeId.ROADMAP
     )
 
@@ -12,7 +12,7 @@ $ ->
         position = new google.maps.LatLng(location.latitude, location.longitude)
 
         icon = new google.maps.MarkerImage(
-          "<%= asset_path('marker/rot.png') %>",
+          app.config.map.marker[location.marker],
           new google.maps.Size(21, 30),
           new google.maps.Point(0,0),
           new google.maps.Point(0, 30)
