@@ -1,0 +1,9 @@
+@mixin stripes ($color, $d:5) {
+  background: {
+    color: lighten($color, 20);
+    image: linear-gradient(rgba(red($color), green($color), blue($color), 0) 10%, $color 70%), repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
+    image: -moz-linear-gradient(rgba(red($color), green($color), blue($color), 0) 10%, $color 70%), -moz-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
+    image: -o-linear-gradient(rgba(red($color), green($color), blue($color), 0) 10%, $color 70%), -o-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
+    image: -webkit-linear-gradient(rgba(red($color), green($color), blue($color), 0) 10%, $color 70%), -webkit-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
+  }
+}

@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lancelot);
 @import "variables";
+@import "mixins";
 
 body {
   margin: 0;
@@ -75,10 +76,10 @@ a {
           width: $sidebar_column_width - 20;
           display: block;
           &:hover {
-            background-color: $primary_color;
             color: white;
             position: relative;
             cursor: pointer;
+            @include stripes ($primary_color, 4);
             &:after {
               content: '>';
               color: white;
