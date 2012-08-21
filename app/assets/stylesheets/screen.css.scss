@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: $super_dark_gray;
+  background: image-url('low_contrast_linen.png') left top repeat $super_dark_gray;
   color: white;
   font-size: 11pt;
   font-family: sans-serif;
@@ -42,7 +42,6 @@ a {
 }
 
 #content {
-  background: $dark_gray;
   padding: 50px 0;
   .locations {
     background: white;
