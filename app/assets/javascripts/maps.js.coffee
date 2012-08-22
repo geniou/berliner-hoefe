@@ -9,7 +9,7 @@ $ ->
 
     locations = app.map.locations || []
     for location in locations
-      do ->
+      do (location) ->
         position = new google.maps.LatLng(location.latitude, location.longitude)
 
         icon = new google.maps.MarkerImage(
