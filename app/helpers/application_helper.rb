@@ -13,4 +13,10 @@ module ApplicationHelper
     end.to_json.html_safe
   end
 
+  def markdown(text)
+    options = [:hard_wrap => true]
+    md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, *options)
+    md.render(text).html_safe  
+  end  
+
 end
