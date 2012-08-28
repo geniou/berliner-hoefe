@@ -1,5 +1,27 @@
 $ ->
   map = null
+  center =
+    latitude:
+      max: null
+      min: null
+      get_dif: -> center.latitude.max - center.latitude.min
+    longitude:
+      max: null
+      min: null
+      get_dif: -> center.longitude.max - center.longitude.min
+    add: (latitude, longitude) ->
+      center.latitude.max = latitude if center.latitude.max is null or latitude > center.latitude.max
+      center.longitude.max = longitude if center.longitude.max is null or longitude > center.longitude.max
+      center.latitude.min = latitude if center.latitude.min is null or latitude < center.latitude.min
+      center.longitude.min = longitude if center.longitude.min is null or longitude < center.longitude.min
+    get: (a) ->
+      if center[a].min is null
+        app.config.map.default.center[a]
+      else
+        center[a].min + (center[a].get_dif() / 2)
+    get_latitude: -> center.get('latitude')
+    get_longitude: -> center.get('longitude')
+    get_zoom: -> 13 # todo
 
   get_icon = (marker_type) ->
     new google.maps.MarkerImage(
@@ -10,6 +32,7 @@ $ ->
     )
 
   add_marker = (location) ->
+    center.add(location.latitude, location.longitude)
     position = new google.maps.LatLng(location.latitude, location.longitude)
 
     marker_type = if location.additional != true then location.marker else 'additional'
@@ -44,18 +67,16 @@ $ ->
     container = jQuery('<div />').appendTo(jQuery(this))
     map = new google.maps.Map(container[0],
       zoom: app.config.map.default.zoom
-      center: new google.maps.LatLng(app.config.map.default.center.latitude, app.config.map.default.center.longitude)
       mapTypeId: google.maps.MapTypeId.ROADMAP
     )
 
     locations = app.map.locations || []
     add_marker(location) for location in locations
-    
     add_marker(location, {additional: true}) for location in app.map.nearby if app.map.nearby?
-    if locations.length  == 1
-      location = locations[0]
-      map.setCenter(new google.maps.LatLng(location.latitude, location.longitude))
-      map.setZoom(12)
+
+    # set center
+    map.setCenter(new google.maps.LatLng(center.get_latitude(), center.get_longitude()))
+    map.setZoom(center.get_zoom()) if locations.length == 1
 
     # edit form
     if $('#location_latitude').length == 1
