@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude
 
+  geocoded_by :latitude  => :latitude, :longitude => :longitude
+
   scope :newest, order: "published_on DESC", limit: 8
 
   extend FriendlyId

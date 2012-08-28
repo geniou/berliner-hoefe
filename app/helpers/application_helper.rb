@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def map_data(locations)
+  def map_data(locations, options = {})
     locations = [locations] unless locations.is_a?(Array)
     locations.map do |location|
       {
@@ -8,7 +8,8 @@ module ApplicationHelper
         :latitude => location.latitude,
         :longitude => location.longitude,
         :marker => location.classification.downcase,
-        :url => location_path(location)
+        :url => location_path(location),
+        :additional => options[:additional] || false
       }
     end.to_json.html_safe
   end
