@@ -8,10 +8,16 @@
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
-  <body>
+  <body id="<%= @body_id %>">
     <div id="header">
       <div class="container">
-        <div id="logo"></div>
+        <div id="navigation">
+          <ul>
+            <li><a href="https://www.facebook.com/berlinerHoefe">Facebook</a></li>
+            <li><a href="/about/contact">Kontakt</a></li>
+            <li><a href="/about/impressum">Impressum</a></li>
+          </ul>
+        </div>
         <h1><%= content_for?(:title) ? yield(:title) : '' %></h1>
       </div>
     </div>

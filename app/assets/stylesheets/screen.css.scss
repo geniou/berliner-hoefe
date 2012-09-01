@@ -21,9 +21,40 @@ h1 {
   height: 150px;
   background-color: $primary_color;
   border-bottom: 1px solid $gray;
+  position: relative;
   box-shadow: 0 1px 10px black, 0 -3px 5px -3px $gray inset;
   h1 {
+    /*
+      padding-left: 65px;
+      background: image-url('logo.png') left 30px no-repeat;
+    */
     padding-top: 100px;
+    #root & {
+      padding-top: 50px;
+    }
+  }
+  #navigation {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-item: none;
+      li {
+        display: inline;
+        a {
+          padding: 10px;
+          color: white;
+          &:hover {
+            background-color: white;
+            color: $primary_color;
+            box-shadow: 1px 1px 5px black;
+            @include stripes(white);
+          }
+        }
+      }
+    }
   }
 }
 
@@ -48,7 +79,7 @@ a {
     box-shadow: 1px 1px 5px black;
     border: 10px solid white;
     margin-top: -100px;
-    &.main > .map {
+    #root & > .map {
       width: $main_column_width;
       height: 500px;
     }

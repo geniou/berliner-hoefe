@@ -1,7 +1,8 @@
+<% title 'Berliner Höfe' %>
 <script type="text/javascript">
   app.map.locations = <%= map_data(@locations) %> 
 </script>
-<div class="locations main">
+<div class="locations">
   <div class="newest">
     <ul>
     <% @newest.each do |location| %>
