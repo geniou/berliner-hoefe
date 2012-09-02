@@ -105,11 +105,14 @@ a {
           line-height: 41.5px;
           width: $sidebar_column_width - 20;
           display: block;
-          &:hover {
+          &:hover,
+          &.highlighted {
             color: white;
             position: relative;
             cursor: pointer;
             @include stripes ($dark_gray, 3);
+          }
+          &:hover {
             &:after {
               content: '>';
               color: white;

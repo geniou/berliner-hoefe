@@ -1,5 +1,5 @@
 $ ->
-  map = null
+  # calculate map center
   center =
     latitude:
       max: null
@@ -23,6 +23,9 @@ $ ->
     get_longitude: -> center.get('longitude')
     get_zoom: -> 13 # todo
 
+  ###
+    marker icon
+  ###
   get_icon = (marker_type) ->
     new google.maps.MarkerImage(
       app.config.map.marker[marker_type],
@@ -31,7 +34,10 @@ $ ->
       new google.maps.Point(0, 30)
     )
 
-  add_marker = (location) ->
+  ###
+    add maker for given location to map
+  ###
+  add_marker = (location, map) ->
     center.add(location.latitude, location.longitude)
     position = new google.maps.LatLng(location.latitude, location.longitude)
 
@@ -56,13 +62,17 @@ $ ->
       window.location.href = location.url
     )
 
+    label = jQuery('[data-locationid='+location.id+']')
     google.maps.event.addListener(marker, 'mouseover', ->
       marker.setIcon(icon_hover)
+      label.addClass('highlighted')
     )
     google.maps.event.addListener(marker, 'mouseout', ->
       marker.setIcon(icon)
+      label.removeClass('highlighted')
     )
 
+  # create map with markers
   $('.map').each ->
     container = jQuery('<div />').appendTo(jQuery(this))
     map = new google.maps.Map(container[0],
@@ -70,9 +80,10 @@ $ ->
       mapTypeId: google.maps.MapTypeId.ROADMAP
     )
 
+    # given locations
     locations = app.map.locations || []
-    add_marker(location) for location in locations
-    add_marker(location, {additional: true}) for location in app.map.nearby if app.map.nearby?
+    add_marker(location, map) for location in locations
+    add_marker(location, map) for location in app.map.nearby if app.map.nearby?
 
     # set center
     map.setCenter(new google.maps.LatLng(center.get_latitude(), center.get_longitude()))

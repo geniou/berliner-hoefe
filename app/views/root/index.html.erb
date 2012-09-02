@@ -6,7 +6,7 @@
   <div class="newest">
     <ul>
     <% @newest.each do |location| %>
-      <li><a href="<%= location_path(location) %>"><%= location.name %></a></li>
+      <li><a href="<%= location_path(location) %>" data-locationid="<%= location.id %>"><%= location.name %></a></li>
     <% end %>
     </ul>
   </div>
