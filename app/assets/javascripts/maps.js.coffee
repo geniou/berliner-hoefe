@@ -1,4 +1,6 @@
 $ ->
+  infoBoxTemplate = JST['locations/infoBox']
+
   # calculate map center
   center =
     latitude:
@@ -48,28 +50,35 @@ $ ->
     marker = new google.maps.Marker
       position: position
       map: map
-      title: location.name
       icon: icon
 
     info = new InfoBox(
-      content: '<a href="' + location.url + '">goto</a>'
+      content: infoBoxTemplate({location: location})
       alignBottom: true
       pixelOffset: new google.maps.Size(0, -40)
+      closeBoxURL: ""
+      disableAutoPan: true
     )
 
     google.maps.event.addListener(marker, 'click', ->
-      # info.open(map, marker)
       window.location.href = location.url
     )
 
     label = jQuery('[data-locationid='+location.id+']')
     google.maps.event.addListener(marker, 'mouseover', ->
+      info.open(map, marker)
       marker.setIcon(icon_hover)
       label.addClass('highlighted')
     )
     google.maps.event.addListener(marker, 'mouseout', ->
+      info.close()
       marker.setIcon(icon)
       label.removeClass('highlighted')
+    )
+
+    label.hover(
+      -> info.open(map, marker),
+      -> info.close()
     )
 
   # create map with markers

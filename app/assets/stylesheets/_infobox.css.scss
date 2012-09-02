@@ -1,0 +1,10 @@
+.infoBox {
+  width: 200px;
+  color: white;
+  padding: 10px;
+  font-family: 'Lancelot', cursive;
+  @include stripes($dark_gray, 3);
+  .close {
+    display: none;
+  }
+}

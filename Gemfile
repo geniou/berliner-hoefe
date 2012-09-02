@@ -8,6 +8,8 @@ gem 'friendly_id'
 gem 'rb-readline'
 gem 'formtastic'
 gem 'redcarpet'
+gem 'ejs'
+gem 'underscore-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
