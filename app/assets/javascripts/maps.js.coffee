@@ -55,7 +55,7 @@ $ ->
     info = new InfoBox(
       content: infoBoxTemplate({location: location})
       alignBottom: true
-      pixelOffset: new google.maps.Size(0, -40)
+      pixelOffset: new google.maps.Size(-72, -25)
       closeBoxURL: ""
       disableAutoPan: true
     )
