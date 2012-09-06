@@ -30,10 +30,10 @@ $ ->
   ###
   get_icon = (marker_type) ->
     new google.maps.MarkerImage(
-      app.config.map.marker[marker_type],
-      new google.maps.Size(21, 30),
-      new google.maps.Point(0,0),
-      new google.maps.Point(0, 30)
+      app.config.map.marker.images[marker_type],
+      new google.maps.Size(app.config.map.marker.size.width, app.config.map.marker.size.height),
+      new google.maps.Point(app.config.map.marker.origin.x, app.config.map.marker.origin.y),
+      new google.maps.Point(app.config.map.marker.anchor.x, app.config.map.marker.anchor.y)
     )
 
   ###
@@ -55,7 +55,7 @@ $ ->
     info = new InfoBox(
       content: infoBoxTemplate({location: location})
       alignBottom: true
-      pixelOffset: new google.maps.Size(-72, -25)
+      pixelOffset: new google.maps.Size(-80, -12)
       closeBoxURL: ""
       disableAutoPan: true
     )

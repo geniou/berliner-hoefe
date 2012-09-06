@@ -1,3 +1,5 @@
+@import "triangle";
+
 @mixin stripes ($color, $d:5) {
   $color_darker: darken($color, 7%);
   background: {

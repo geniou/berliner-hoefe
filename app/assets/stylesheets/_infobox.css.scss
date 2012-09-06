@@ -5,16 +5,18 @@
   padding: 10px;
   text-align: center;
   font-family: 'Lancelot', cursive;
-  // @include stripes(white, 3);
-  background-color: rgba(255,255,255,0.8);
+  font-size: 1.2em;
+  background-color: rgba(255,255,255,0.9);
   box-shadow: 1px 1px 5px black;
   text-shadow: 1px 1px 1px white;
   .close {
     display: none;
   }
-  .icon {
+  &:after {
+    content: '';
+    @include triangle(bottom, 20px, 10px, rgba(255,255,255,0.95));
     position: absolute;
-    bottom: -30px;
-    left: 73px;
+    bottom: -10px;
+    left: 70px;
   }
 }
