@@ -8,7 +8,9 @@ class Admin::LocationsController < Admin::ApplicationController
   end
 
   def create
-    @location = Location.new(params[:location])
+    propperties = params[:location]
+    propperties[:published_on] = propperties[:published_on] != 0 ? Time.now : nil
+    @location = Location.new(propperties)
     if @location.save
       redirect_to @location, :notice => "Successfully created location."
     else
@@ -22,7 +24,9 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    if @location.update_attributes(params[:location])
+    propperties = params[:location]
+    propperties[:published_on] = propperties[:published_on] != '0' ? @location.published_on || Time.now : nil
+    if @location.update_attributes(propperties)
       redirect_to @location, :notice  => "Successfully updated location."
     else
       render :action => 'edit'

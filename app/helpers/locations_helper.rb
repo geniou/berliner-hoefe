@@ -1,7 +1,6 @@
 module LocationsHelper
 
   def map_data(locations, options = {})
-    locations = [locations] unless locations.is_a?(Array)
     locations.map do |location|
       {
         :id => location.id,

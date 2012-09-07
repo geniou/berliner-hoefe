@@ -1,6 +1,6 @@
 <% title @location.name %>
 <script type="text/javascript">
-  app.map.locations = <%= map_data(@location) %> 
+  app.map.locations = <%= map_data([@location]) %> 
   app.map.nearby = <%= map_data(@nearby.to_a, additional: true) %> 
 </script>
 
