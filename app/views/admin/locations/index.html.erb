@@ -1,29 +1,29 @@
 <% title "Locations" %>
 
+<%= form_tag(:action => "massoperation", :controller => "locations") do %>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Published On</th>
-    <th>Slug</th>
-    <th>Type</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
+    <th></th>
+    <th>name</th>
+    <th>published on</th>
+    <th>type</th>
+    <th>show detail page</th>
   </tr>
   <% for location in @locations %>
     <tr>
+      <td><%= check_box_tag('massoperation[]', location.id) %></td>
       <td><%= location.name %></td>
-      <td><%= location.description %></td>
       <td><%= location.published_on %></td>
-      <td><%= location.slug %></td>
       <td><%= location.classification %></td>
-      <td><%= location.latitude %></td>
-      <td><%= location.longitude %></td>
+      <td><%= location.show_detail %></td>
       <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_admin_location_path(location) %></td>
       <td><%= link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
+<%= select_tag(:do, options_for_select(['publish', 'unpublish', ['show detail page', 'has_show'], ['no detail page', 'no_show']])) %>
+<%= submit_tag("Run") %>
+<% end %>
 
-<p><%= link_to "New Location", new_admin_location_path %></p>
+<p><% link_to "New Location", new_admin_location_path %></p>

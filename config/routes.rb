@@ -4,7 +4,11 @@ BerlinerHoefe::Application.routes.draw do
   resources :locations, :path => 'hof'
 
   namespace :admin do
-    resources :locations
+    resources :locations do
+      collection do
+        post 'massoperation'
+      end
+    end
   end
 
   #

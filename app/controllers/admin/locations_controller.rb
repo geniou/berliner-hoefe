@@ -38,4 +38,19 @@ class Admin::LocationsController < Admin::ApplicationController
     @location.destroy
     redirect_to locations_url, :notice => "Successfully destroyed location."
   end
+
+  def massoperation
+    ids = params[:massoperation]
+    case params[:do]
+      when 'publish'
+        Location.update_all( { :published_on => Time.now }, [ "id IN (?)", ids ] )
+      when 'unpublish'
+        Location.update_all( { :published_on => nil }, [ "id IN (?)", ids ] )
+      when 'has_show'
+        Location.update_all( { :show_detail => true }, [ "id IN (?)", ids ] )
+      when 'no_show'
+        Location.update_all( { :show_detail => false }, [ "id IN (?)", ids ] )
+    end
+    redirect_to :action => 'index'
+  end
 end
