@@ -4,8 +4,8 @@ class Location < ActiveRecord::Base
   geocoded_by :latitude  => :latitude, :longitude => :longitude
 
   scope :newest, order: "published_on DESC", limit: 8
-  scope :for_map, conditions: { show_detail: true }
-  scope :published, lambda { { conditions: [ "published_on > ?", Date.today ] } }
+  scope :for_map, conditions: { on_map: true }
+  scope :published, lambda { { conditions: [ "published_on < ?", Time.now ] } }
 
   extend FriendlyId
   friendly_id :name, use: :slugged

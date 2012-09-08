@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120803185325) do
+ActiveRecord::Schema.define(:version => 20120908202528) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120803185325) do
     t.float    "longitude"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.boolean  "on_map"
   end
 
   add_index "locations", ["slug"], :name => "index_locations_on_slug", :unique => true

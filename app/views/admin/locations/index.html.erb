@@ -5,16 +5,18 @@
   <tr>
     <th></th>
     <th>name</th>
-    <th>published on</th>
     <th>type</th>
+    <th>published on</th>
+    <th>on map</th>
     <th>show detail page</th>
   </tr>
   <% for location in @locations %>
     <tr>
       <td><%= check_box_tag('massoperation[]', location.id) %></td>
       <td><%= location.name %></td>
-      <td><%= location.published_on %></td>
       <td><%= location.classification %></td>
+      <td><%= location.published_on %></td>
+      <td><%= location.on_map %></td>
       <td><%= location.show_detail %></td>
       <td><%= link_to "Show", location %></td>
       <td><%= link_to "Edit", edit_admin_location_path(location) %></td>
@@ -22,7 +24,7 @@
     </tr>
   <% end %>
 </table>
-<%= select_tag(:do, options_for_select(['publish', 'unpublish', ['show detail page', 'has_show'], ['no detail page', 'no_show']])) %>
+<%= select_tag(:do, options_for_select(['publish', 'unpublish', ['on map', 'on_map'], ['not on map', 'no_map'], ['show detail page', 'has_show'], ['no detail page', 'no_show']])) %>
 <%= submit_tag("Run") %>
 <% end %>
 
