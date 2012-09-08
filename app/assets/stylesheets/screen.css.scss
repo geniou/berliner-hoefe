@@ -127,6 +127,24 @@ a {
       }
     } 
   }
+  .container {
+    #locations & {
+      background: white;
+      padding: 15px;
+      color: $dark_gray;
+      table {
+        width: 100%;
+        border: 1px solid $gray;
+        tr {
+          td, th {
+            padding: 3px;
+            border-bottom: 1px solid $gray;
+            border-right: 1px solid $gray;
+          }
+        }
+      }
+    }
+  }
 }
 
 #header, #content, #footer {

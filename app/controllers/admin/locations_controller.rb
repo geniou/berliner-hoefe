@@ -1,6 +1,7 @@
 class Admin::LocationsController < Admin::ApplicationController
   def index
     @locations = Location.all
+    @body_id = 'locations'
   end
 
   def new
