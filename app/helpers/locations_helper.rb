@@ -9,7 +9,8 @@ module LocationsHelper
         :longitude => location.longitude,
         :marker => location.classification.downcase,
         :url => location_path(location),
-        :additional => options[:additional] || false
+        :additional => options[:additional] || false,
+        :show_detail => location.show_detail
       }
     end.to_json.html_safe
   end
