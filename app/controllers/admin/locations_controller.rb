@@ -6,6 +6,7 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def new
     @location = Location.new
+    @location.images.build
   end
 
   def create
@@ -21,6 +22,7 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def edit
     @location = Location.find(params[:id])
+    @location.images.build
   end
 
   def update

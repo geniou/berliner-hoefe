@@ -1,5 +1,8 @@
 class Location < ActiveRecord::Base
-  attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude, :show_detail
+  attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude, :show_detail, :images_attributes
+  
+  has_many :images, :dependent => :destroy
+  accepts_nested_attributes_for :images, :allow_destroy => true
 
   geocoded_by :latitude  => :latitude, :longitude => :longitude
 

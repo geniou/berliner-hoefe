@@ -1,4 +1,4 @@
-<%= semantic_form_for [:admin, @location] do |f| %>
+<%= semantic_form_for [:admin, @location], :html => { :multipart => true } do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
     <%= f.input :description %>
@@ -6,6 +6,13 @@
     <%= f.input :classification, as: :select, collection: ['living', 'industry'], include_blank: false %>
     <%= f.input :show_detail, label: "Show detail page" %>
     <%= f.input :published_on, label: "Published", as: :boolean %>
+    <%= f.semantic_fields_for :images do |image| %>
+      <% unless image.object.new_record? %>
+        <%= image.input :_destroy, :as => :boolean, :label => image_tag(image.object.image.url(:thumb)) %>
+      <% else %>
+        <%= image.input :image, :as => :file, :name => "Add Image" %>
+      <% end %>
+    <% end %>
   <% end %>
   <div id="map" class="map"></div>
   <%= f.hidden_field :latitude %>
