@@ -6,9 +6,7 @@
 
 <div class="columns">
   <div class="column">
-    <p>
-      <%= markdown(@location.description) %>
-    </p>
+    <%= markdown(@location.description) %>
     <div class="images">
       <% @location.images.each do |image| %>
         <%= link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), {'data-slideshow' => 'true'}) %>
