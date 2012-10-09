@@ -1,21 +1,27 @@
 <% title @location.name %>
-<script type="text/javascript">
-  app.map.locations = <%= map_data([@location]) %> 
-  app.map.nearby = <%= map_data(@nearby.to_a, additional: true) %> 
-</script>
 
-<div class="columns">
-  <div class="column">
-    <%= markdown(@location.description) %>
-    <div class="images">
-      <% @location.images.each do |image| %>
-        <%= link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), {'data-slideshow' => 'true'}) %>
-      <% end %>
+<section>
+  <div class="location_image">
+
+  </div>
+  <div class="columns">
+    <div class="column">
+      <%= markdown(@location.description) %>
+    </div>
+    <div class="column last">
+      <div class="images">
+        <% @location.images.each do |image| %>
+          <%= link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), {'data-slideshow' => 'true'}) %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div class="column last">
-    <div class="locations show">
-      <div class="map"></div>
-    </div>
-  </div>
-</div>
+</section>
+
+<section>
+  <script type="text/javascript">
+    app.map.locations = <%= map_data([@location]) %> 
+    app.map.nearby = <%= map_data(@nearby.to_a, additional: true) %> 
+  </script>
+  <%= render :partial => "shared/map", :locals => { :locations => @nearby.to_a, :count => 8 }%>
+</section>

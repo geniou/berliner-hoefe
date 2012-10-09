@@ -2,13 +2,7 @@
 <script type="text/javascript">
   app.map.locations = <%= map_data(@locations) %> 
 </script>
-<div class="locations">
-  <div class="newest">
-    <ul>
-    <% @newest.each do |location| %>
-      <li><a href="<%= location_path(location) %>" data-locationid="<%= location.id %>"><%= location.name %></a></li>
-    <% end %>
-    </ul>
-  </div>
-  <div class="map"></div>
-</div>
+
+<section>
+  <%= render :partial => "shared/map", :locals => { :locations => @newest }%>
+</section>

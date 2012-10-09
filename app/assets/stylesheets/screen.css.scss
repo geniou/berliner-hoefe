@@ -26,10 +26,7 @@ h1 {
   position: relative;
   box-shadow: 0 1px 10px black, 0 -3px 5px -3px $gray inset;
   h1 {
-    padding-top: 100px;
-    #root & {
-      padding-top: 50px;
-    }
+    padding-top: 50px;
   }
   #navigation {
     position: absolute;
@@ -64,12 +61,11 @@ a {
 p {
   line-height: 1.4em;
   margin: 0 0 10px 0;
-  text-shadow: 1px 1px 1px black;
 }
 
 .map {
-  width: 450px;
-  height: 250px;
+  width: $main_column_width;
+  height: 315px;
   > div {
     height: 100%;
     width: 100%;
@@ -77,12 +73,8 @@ p {
 }
 
 #content {
-  padding: 40px 0;
+  margin-top: -50px;
   .locations {
-    background: white;
-    box-shadow: 1px 1px 5px black;
-    border: 10px solid white;
-    margin-top: -100px;
     #root & > .map {
       width: $main_column_width;
       height: 500px;
@@ -122,10 +114,14 @@ p {
     } 
   }
   .container {
-    #locations & {
+    section {
       background: white;
       padding: 15px;
       color: $dark_gray;
+      margin-bottom: 20px;
+      box-shadow: 1px 1px 5px black;
+    }
+    #locations & {
       table {
         width: 100%;
         border: 1px solid $gray;
@@ -161,4 +157,10 @@ p {
       margin-right: 0;
     }
   }
+}
+
+.location_image {
+  height: 300px;
+  background: image-url('header_dummy.jpg') top left no-repeat;
+  margin-bottom: 15px;
 }

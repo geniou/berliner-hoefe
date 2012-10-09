@@ -7,5 +7,6 @@ $super_dark_gray: darken(#3e3e3e, 10);
 
 $column_spacing: 20px;
 $total_width: 1000px;
-$main_column_width: ($total_width * 0.618) - ($column_spacing + 5 / 2);
-$sidebar_column_width: ($total_width * 0.382) - ($column_spacing + 5 / 2);
+$conent_width: $total_width - 30;
+$main_column_width: ($conent_width * 0.618) - ($column_spacing + 5 / 2);
+$sidebar_column_width: ($conent_width * 0.382) - ($column_spacing + 5 / 2);
