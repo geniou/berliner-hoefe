@@ -1,16 +1,18 @@
 <% title @location.name %>
 
 <section>
-  <div class="location_image">
-
-  </div>
+  <% if @location.header_image %>
+    <div class="location_image">
+      <%= image_tag(@location.header_image.image.url(:header)) %>
+    </div>
+  <% end %>
   <div class="columns">
     <div class="column">
       <%= markdown(@location.description) %>
     </div>
     <div class="column last">
       <div class="images">
-        <% @location.images.each do |image| %>
+        <% @location.slideshow_images.each do |image| %>
           <%= link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), {'data-slideshow' => 'true'}) %>
         <% end %>
       </div>

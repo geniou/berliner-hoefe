@@ -11,6 +11,7 @@
         <%= image.input :_destroy, :as => :boolean, :label => image_tag(image.object.image.url(:thumb)) %>
       <% else %>
         <%= image.input :image, :as => :file, :name => "Add Image" %>
+        <%= image.input :display_type, as: :select, collection: ['header'] %>
       <% end %>
     <% end %>
   <% end %>

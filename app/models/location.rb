@@ -16,5 +16,13 @@ class Location < ActiveRecord::Base
   def should_generate_new_friendly_id?
     slug.empty?
   end
+  
+  def header_image
+    self.images.where(:display_type => "header").first()
+  end
+  
+  def slideshow_images
+    self.images.where(:display_type => nil)
+  end
 
 end
