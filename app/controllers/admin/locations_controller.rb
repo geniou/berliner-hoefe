@@ -43,24 +43,7 @@ class Admin::LocationsController < Admin::ApplicationController
   end
 
   def massoperation
-    ids = params[:massoperation]
-    attributes = case params[:do]
-      when 'publish'
-        { :published_on => Time.now }
-      when 'unpublish'
-        { published_on => nil }
-      when 'has_show'
-        { :published_on => Time.now, :show_detail => true }
-      when 'no_show'
-        { show_detail => false }
-      when 'on_map'
-        { :published_on => Time.now, :on_map => true }
-      when 'no_map'
-        { :on_map => false }
-    end
-    if attributes
-      Location.update_all( attributes, [ "id IN (?)", ids ] )
-    end
+    Location.perform_massoperation(params[:do], params[:massoperation])
     redirect_to :action => 'index'
   end
 end
