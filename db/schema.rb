@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121021060029) do
+ActiveRecord::Schema.define(:version => 20130205200456) do
 
   create_table "images", :force => true do |t|
     t.integer  "location_id"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(:version => 20121021060029) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.string   "image_title"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-    t.string   "display_type"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
+    t.string   "type",               :default => "Image::Slideshow", :null => false
   end
 
   create_table "locations", :force => true do |t|

@@ -1,8 +1,12 @@
 class Location < ActiveRecord::Base
+  extend FriendlyId
+
   attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude, :show_detail, :images_attributes
-  
-  has_many :images, :dependent => :destroy
-  accepts_nested_attributes_for :images, :allow_destroy => true
+
+  has_one :header_image,      class_name: 'Image::Header',    :dependent => :destroy
+  has_many :slideshow_images, class_name: 'Image::Slideshow', :dependent => :destroy
+  accepts_nested_attributes_for :header_image,     :allow_destroy => true
+  accepts_nested_attributes_for :slideshow_images, :allow_destroy => true
 
   geocoded_by :latitude  => :latitude, :longitude => :longitude
 
@@ -10,19 +14,14 @@ class Location < ActiveRecord::Base
   scope :for_map, conditions: { on_map: true }
   scope :published, lambda { { conditions: [ "published_on < ?", Time.now ] } }
 
-  extend FriendlyId
   friendly_id :name, use: :slugged
 
   def should_generate_new_friendly_id?
     slug.empty?
   end
-  
-  def header_image
-    self.images.where(:display_type => "header").first()
-  end
-  
-  def slideshow_images
-    self.images.where(:display_type => nil)
+
+  def nearbys_for_map
+    nearbys.published.for_map.limit(5)
   end
 
 end
