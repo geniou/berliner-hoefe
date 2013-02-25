@@ -1,0 +1,6 @@
+.locations
+  .newest
+    %ul
+      - locations.each do |location|
+        %li= link_to location.name, location_path(location), { data: { locationid: location.id } }
+  .map

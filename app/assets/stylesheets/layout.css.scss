@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: image-url('low_contrast_linen.png') left top repeat $super_dark_gray;
+  color: white;
+  font-size: 10pt;
+  font-family: sans-serif;
+}
+
+a {
+  color: $primary_color;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4em;
+  margin: 0 0 10px 0;
+}
+
+h1 {
+  color: $dark_gray;
+  margin: 0 0 15px 0;
+  font-size: 2.7em;
+  font-family: 'Lancelot', cursive;
+}
+
+#header, #content, #footer {
+  > .container {
+    width: $total_width;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
+}
+
+#header {
+  height: 120px;
+  background-color: $primary_color;
+  border-bottom: 1px solid $gray;
+  position: relative;
+  box-shadow: 0 1px 10px black, 0 -3px 5px -3px $gray inset;
+}
+
+#content {
+  margin-top: -50px;
+  & > .container {
+    width: $total_width - 60px;
+    background: white;
+    padding: 30px;
+    color: $dark_gray;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 5px black;
+  }
+}
+
+.header-image {
+  margin: 0 -30px;
+  height: 280px;
+  margin-bottom: 15px;
+  background: #e3e3e3;
+}

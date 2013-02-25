@@ -1,8 +1,0 @@
-<% title 'Berliner Höfe' %>
-<script type="text/javascript">
-  app.map.locations = <%= map_data(@locations) %> 
-</script>
-
-<section>
-  <%= render :partial => "shared/map", :locals => { :locations => @newest }%>
-</section>
