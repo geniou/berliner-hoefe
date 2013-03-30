@@ -20,42 +20,56 @@ p {
 h1 {
   color: $dark_gray;
   margin: 0 0 15px 0;
-  font-size: 2.7em;
+  font-size: 3.2em;
   font-family: 'Lancelot', cursive;
 }
 
-#header, #content, #footer {
+header,
+#content,
+footer {
   > .container {
-    width: $total_width;
+    width: 60%;
+    max-width: 1200px;
+    @media only screen and (max-device-width: 480px) {
+      width: 100%;
+    }
     display: block;
     position: relative;
     margin: 0 auto;
   }
 }
 
-#header {
+header {
   height: 120px;
   background-color: $primary_color;
   border-bottom: 1px solid $gray;
   position: relative;
   box-shadow: 0 1px 10px black, 0 -3px 5px -3px $gray inset;
+  h1 {
+    padding-top: 20px;
+    a {
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.25s;
+      &:hover {
+        color: white;
+      }
+    }
+  }
 }
 
 #content {
-  margin-top: -50px;
-  & > .container {
-    width: $total_width - 60px;
+  margin-top: -40px;
+  & > .container .section {
     background: white;
-    padding: 30px;
     color: $dark_gray;
     margin-bottom: 20px;
     box-shadow: 1px 1px 5px black;
   }
 }
 
-.header-image {
-  margin: 0 -30px;
-  height: 280px;
-  margin-bottom: 15px;
-  background: #e3e3e3;
+footer > .container {
+  background: $super_dark_gray;
+  color: $gray;
+  border-top: 1px solid $dark_gray;
+  min-height: 200px;
 }

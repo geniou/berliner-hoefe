@@ -83,9 +83,8 @@ $ ->
     )
 
   # create map with markers
-  $('.map').each ->
-    container = jQuery('<div />').appendTo(jQuery(this))
-    map = new google.maps.Map(container[0],
+  $('#map').each ->
+    map = new google.maps.Map(@,
       zoom: app.config.map.default.zoom
       mapTypeId: google.maps.MapTypeId.ROADMAP
     )

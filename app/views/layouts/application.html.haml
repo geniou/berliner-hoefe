@@ -1,25 +1,25 @@
 !!! 5
 %html
   %head
-    %title= content_for?(:title) ? "#{yield(:title)} | " : "" + "Berliner Höfe"
+    %title= page_title
     = stylesheet_link_tag "application"
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=false"
     = javascript_include_tag "application"
     = csrf_meta_tag
     = yield(:head)
   %body{ id: @body_id }
-    #header
+    %header
       .container
-        %nav#navigation
-          %ul
-            %li= link_to 'Startseite', root_path
-            %li= link_to 'Facebook', "https://www.facebook.com/berlinerHoefe"
-            %li= link_to 'Kontakt', '#'
-            %li= link_to 'Impressum', '#'
+        %h1= link_to 'Berliner Höfe', root_path
     #content
       .container
         - if content_for?(:title)
           %h1= yield(:title)
         = yield
-    #footer
+    %footer
       .container
+        %ul
+          %li= link_to 'Startseite', root_path
+          %li= link_to 'Facebook', "https://www.facebook.com/berlinerHoefe"
+          %li= link_to 'Kontakt', '#'
+          %li= link_to 'Impressum', '#'

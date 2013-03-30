@@ -1,22 +1,20 @@
-- title @location.name
+- @title = @location.name
 
-%section
+%article.section
   - if @location.header_image
     .header-image
+      %h1= @location.name
       = image_tag(@location.header_image.image.url(:header))
 
-  .columns
-    .column
-      = markdown(@location.description)
+  .description
+    = markdown(@location.description)
 
-    .column.last
-      .images
-        - @location.slideshow_images.each do |image|
-          = link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), { data: { slideshow: 'true' } })
+  .images
+    - @location.slideshow_images.each do |image|
+      = link_to(image_tag(image.image.url(:thumb)), image.image.url(:large), { data: { slideshow: 'true' } })
 
-%section
+.section
   %script
     app.map.locations = #{map_data([@location])}
     app.map.nearby = #{map_data(@nearby.to_a, additional: true)}
-
-  = render partial: "shared/map", locals: { locations: @nearby.to_a, count: 8 }
+  #map
