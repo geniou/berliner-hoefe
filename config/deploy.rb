@@ -12,7 +12,7 @@ set :user, 'geni'
 
 # a name for your app, [a-z0-9] should be safe, will be used for your gemset,
 # databases, directories, etc.
-set :application, 'berliner-hoefe'
+set :application, 'berliner_hoefe'
 
 # the repo where your code is hosted
 set :scm, :git
