@@ -33,6 +33,9 @@ footer {
     @media only screen and (max-device-width: 480px) {
       width: 100%;
     }
+    @media only screen and (max-width: $small_width) {
+      width: 100%;
+    }
     display: block;
     position: relative;
     margin: 0 auto;
