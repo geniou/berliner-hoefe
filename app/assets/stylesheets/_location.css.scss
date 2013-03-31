@@ -16,11 +16,40 @@
   }
 }
 
-.description {
-  font-size: 1.3em;
+.description,
+.images {
   width: 80%;
+  margin: 30px auto;
   @media only screen and (max-device-width: 480px) {
     width: 90%;
   }
-  margin: 30px auto;
+}
+
+.description {
+  font-size: 1.3em;
+}
+
+ul.images {
+  list-style: none;
+  padding: 0 0 20px;
+  li {
+    display: inline-block;
+    width: 16%;
+    margin-right: 1.5%;
+    margin-bottom: 15px;
+    background: white;
+    padding: 1%;
+    box-shadow: 0 0 2px 2px $gray;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+    img {
+      width: 100%;
+      border: 1px solid $gray;
+      opacity: 0.9;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
 }

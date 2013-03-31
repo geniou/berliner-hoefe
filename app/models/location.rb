@@ -1,10 +1,10 @@
 class Location < ActiveRecord::Base
   extend FriendlyId
 
-  attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude, :show_detail, :images_attributes
+  attr_accessible :name, :description, :published_on, :slug, :classification, :latitude, :longitude, :show_detail, :header_image_attributes, :slideshow_images_attributes
 
-  has_one :header_image,      class_name: 'Image::Header',    dependent: :destroy
-  has_many :slideshow_images, class_name: 'Image::Slideshow', dependent: :destroy
+  has_one  :header_image,     class_name: Image::Header,    dependent: :destroy
+  has_many :slideshow_images, class_name: Image::Slideshow, dependent: :destroy
   accepts_nested_attributes_for :header_image,     :allow_destroy => true
   accepts_nested_attributes_for :slideshow_images, :allow_destroy => true
 

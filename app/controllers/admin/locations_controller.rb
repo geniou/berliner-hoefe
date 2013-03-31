@@ -22,7 +22,8 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def edit
     @location = Location.find(params[:id])
-    @location.images.build
+    @location.build_header_image unless @location.header_image
+    @location.slideshow_images.build
   end
 
   def update

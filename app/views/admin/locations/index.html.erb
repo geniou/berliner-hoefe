@@ -24,7 +24,7 @@
     </tr>
   <% end %>
 </table>
-<%= select_tag(:do, options_for_select(['publish', 'unpublish', ['on map', 'on_map'], ['not on map', 'no_map'], ['show detail page', 'has_show'], ['no detail page', 'no_show']])) %>
+<%= select_tag(:do, options_for_select(['publish', 'unpublish', ['on map', 'show_on_map'], ['not on map', 'hide_on_map'], ['show detail page', 'show_datail'], ['no detail page', 'hide_detail']])) %>
 <%= submit_tag("Run") %>
 <% end %>
 

@@ -1,6 +1,6 @@
 $ ->
   jQuery("[data-slideshow='true']")
-    .attr("data-fancybox-group", "slideshow")
+    .attr("rel", "slideshow")
     .fancybox
       nextClick: true
       openEffect: 'none'
