@@ -2,13 +2,13 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.published.for_map
-    @newest = @locations.newest
+    @footer_locations = @locations.newest
     @body_id = 'root'
   end
 
   def show
     @location = Location.find(params[:id])
-    @nearby = @location.nearbys_for_map
+    @footer_locations = @nearby = @location.nearbys_for_map
   end
 
   def redirect
