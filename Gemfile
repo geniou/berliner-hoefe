@@ -16,7 +16,6 @@ gem 'redcarpet'
 gem 'ejs'
 gem 'paperclip'
 gem 'uglifier'
-gem 'uberspacify'
 
 group :test, :development do
   gem 'rspec-rails'
