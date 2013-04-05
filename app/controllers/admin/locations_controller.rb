@@ -6,7 +6,8 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def new
     @location = Location.new
-    @location.images.build
+    @location.build_header_image
+    @location.slideshow_images.build
   end
 
   def create

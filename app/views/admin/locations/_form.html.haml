@@ -1,0 +1,25 @@
+= semantic_form_for [:admin, @location], :html => { :multipart => true } do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :description
+    = f.input :slug, label: "URL", required: false
+    = f.input :classification, as: :select, collection: ['living', 'industry'], include_blank: false
+    = f.input :show_detail, label: "Show detail page"
+    = f.input :published_on, label: "Published", as: :boolean
+    = f.semantic_fields_for :header_image do |image|
+      - unless image.object.new_record?
+        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
+      - else
+        = image.input :image, as: :file, label: "Header image"
+    = f.semantic_fields_for :slideshow_images do |image|
+      - unless image.object.new_record?
+        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
+      - else
+        = image.input :image, as: :file, label: "Add Image"
+
+  #map.map
+
+  = f.hidden_field :latitude
+  = f.hidden_field :longitude
+  = f.actions do
+    = f.action :submit
