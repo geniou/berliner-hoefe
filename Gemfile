@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'pg'
+gem 'mysql2'
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'haml-rails'
@@ -21,6 +21,11 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+group :development do
+  gem 'capistrano'
+end
+
 group :production do
   gem 'therubyracer'
+  gem 'fcgi'
 end
