@@ -16,6 +16,7 @@ gem 'redcarpet'
 gem 'ejs'
 gem 'paperclip'
 gem 'uglifier'
+gem 'therubyracer'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -26,6 +27,5 @@ group :development do
 end
 
 group :production do
-  gem 'therubyracer'
   gem 'fcgi'
 end
