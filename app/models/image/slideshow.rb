@@ -1,4 +1,6 @@
 class Image::Slideshow < Image
+  attr_accessible :title, :position
+
   has_attached_file :image,
     styles: {
       thumb: "100x40>",

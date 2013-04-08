@@ -1,0 +1,17 @@
+.formtastic fieldset fieldset {
+  border: 1px solid $gray;
+  margin: 1em 0;
+  padding: 0 1em 0.5em 1em;
+  legend {
+    cursor: pointer;
+  }
+  li {
+    display: none;
+  }
+  &.open {
+    padding: 1em;
+    li {
+      display: block;
+    }
+  }
+}

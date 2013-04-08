@@ -3,5 +3,8 @@ $ ->
     .attr("rel", "slideshow")
     .fancybox
       nextClick: true
-      openEffect: 'none'
-      closeEffect: 'none'
+      nextEffect: 'none'
+      prevEffect: 'none'
+      helpers:
+        title:
+          type: 'inside'

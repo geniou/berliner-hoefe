@@ -12,10 +12,14 @@
       - else
         = image.input :image, as: :file, label: "Header image"
     = f.semantic_fields_for :slideshow_images do |image|
-      - unless image.object.new_record?
-        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
-      - else
-        = image.input :image, as: :file, label: "Add Image"
+      %fieldset{ class: image.object.new_record? ? '' : 'open' }
+        %legend Image
+        - unless image.object.new_record?
+          = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
+        - else
+          = image.input :image, as: :file, label: "Add Image"
+        = image.input :title
+        = image.input :position
 
   #map.map
 

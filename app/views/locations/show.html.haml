@@ -12,8 +12,8 @@
   %ul.images
     - @location.slideshow_images.each do |image|
       %li
-        = link_to(image_tag(image.image.url(:small)),
-          image_path(image.image.url(:large)), { data: { slideshow: 'true' } })
+        = link_to(image_tag(image.image.url(:small), alt: image.title),
+          image_path(image.image.url(:large)), { title: image.title, data: { slideshow: 'true' } })
 
 .section
   %script

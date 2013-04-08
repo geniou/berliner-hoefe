@@ -24,7 +24,7 @@ class Admin::LocationsController < Admin::ApplicationController
   def edit
     @location = Location.find(params[:id])
     @location.build_header_image unless @location.header_image
-    @location.slideshow_images.build
+    10.times { @location.slideshow_images.build }
   end
 
   def update
