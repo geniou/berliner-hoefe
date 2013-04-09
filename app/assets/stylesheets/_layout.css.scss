@@ -45,9 +45,9 @@ footer {
 header {
   height: 120px;
   background-color: $primary_color;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid $light_gray;
   position: relative;
-  box-shadow: 0 1px 10px black, 0 -3px 5px -3px $gray inset;
+  box-shadow: 0 1px 10px black, 0 -3px 5px -3px $light_gray inset;
   h1 {
     padding-top: 20px;
     a {
@@ -75,7 +75,7 @@ header {
 
 footer > .container {
   background: $super_dark_gray;
-  color: $gray;
+  color: $light_gray;
   padding: 20px 0 0;
   a {
     color: $dark_gray;
@@ -86,7 +86,7 @@ footer > .container {
   ul {
     &:hover {
       a {
-        color: $gray;
+        color: $light_gray;
         &:hover {
           color: $primary_color;
         }

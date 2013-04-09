@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408183207) do
+ActiveRecord::Schema.define(:version => 20130409193025) do
 
   create_table "images", :force => true do |t|
     t.integer  "location_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130408183207) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.boolean  "on_map"
+    t.text     "annotations"
   end
 
   add_index "locations", ["slug"], :name => "index_locations_on_slug", :unique => true

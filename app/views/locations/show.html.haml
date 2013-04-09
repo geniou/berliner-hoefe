@@ -6,8 +6,10 @@
       %h1= @location.name
       = image_tag(@location.header_image.image.url(:large))
 
-  .description
-    = markdown(@location.description)
+  .description= markdown(@location.description)
+
+  - unless @location.annotations.blank?
+    .annotations= markdown(@location.annotations)
 
   %ul.images
     - @location.slideshow_images.each do |image|
