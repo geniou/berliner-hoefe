@@ -24,6 +24,7 @@ end
 
 group :development do
   gem 'capistrano'
+  gem 'brakeman'
 end
 
 group :production do
