@@ -46,7 +46,7 @@ class Location < ActiveRecord::Base
   end
 
   def nearbys_for_map
-    nearbys.published.for_map.limit(5)
+    nearbys.published.for_map.limit(8)
   end
 
 end
