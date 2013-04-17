@@ -23,7 +23,6 @@ $ ->
         center[a].min + (center[a].get_dif() / 2)
     get_latitude: -> center.get('latitude')
     get_longitude: -> center.get('longitude')
-    get_zoom: -> 13 # todo
 
   ###
     marker icon
@@ -96,7 +95,6 @@ $ ->
 
     # set center
     map.setCenter(new google.maps.LatLng(center.get_latitude(), center.get_longitude()))
-    map.setZoom(center.get_zoom()) if locations.length == 1
 
     # edit form
     if $('#location_latitude').length == 1
