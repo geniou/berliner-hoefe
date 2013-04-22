@@ -3,25 +3,20 @@
 
   %p= link_to "New Location", new_admin_location_path
 
-  = form_tag(:action => "massoperation", :controller => "locations") do
-    %table
+  %table
+    %tr
+      %th Name
+      %th Type
+      %th published on
+      %th on map
+      %th show detail page
+    - for location in @locations
       %tr
-        %th
-          %th Name
-        %th Type
-        %th published on
-        %th on map
-        %th show detail page
-      - for location in @locations
-        %tr
-          %td= check_box_tag('massoperation[]', location.id)
-          %td= location.name
-          %td= location.classification
-          %td= location.published_on
-          %td= location.on_map
-          %td= location.show_detail
-          %td= link_to "Show", location
-          %td= link_to "Edit", edit_admin_location_path(location)
-          %td= link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete
-    = select_tag(:do, options_for_select(['publish', 'unpublish', ['on map', 'show_on_map'], ['not on map', 'hide_on_map'], ['show detail page', 'show_datail'], ['no detail page', 'hide_detail']]))
-    = submit_tag("Run")
+        %td= location.name
+        %td= location.classification
+        %td= location.published_on
+        %td= location.on_map
+        %td= location.show_detail
+        %td= link_to "Show", location
+        %td= link_to "Edit", edit_admin_location_path(location)
+        %td= link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete

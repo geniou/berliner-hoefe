@@ -1,10 +1,6 @@
 BerlinerHoefe::Application.routes.draw do
   namespace :admin do
-    resources :locations do
-      collection do
-        post 'massoperation'
-      end
-    end
+    resources :locations
     root to: 'locations#index'
   end
 

@@ -43,9 +43,4 @@ class Admin::LocationsController < Admin::ApplicationController
     @location.destroy
     redirect_to locations_url, :notice => "Successfully destroyed location."
   end
-
-  def massoperation
-    Location.perform_massoperation(params[:do], params[:massoperation])
-    redirect_to :action => 'index'
-  end
 end

@@ -21,26 +21,6 @@ class Location < ActiveRecord::Base
 
   friendly_id :name, use: :slugged
 
-  def self.perform_massoperation(operation, ids)
-    attributes = case operation
-      when 'publish'
-        { published_on: Time.now }
-      when 'unpublish'
-        { published_on: nil }
-      when 'show_detail'
-        { published_on: Time.now, show_detail: true }
-      when 'hide_detail'
-        { show_detail: false }
-      when 'show_on_map'
-        { published_on: Time.now, on_map: true }
-      when 'hide_on_map'
-        { on_map: false }
-    end
-    if attributes
-      Location.update_all( attributes, [ "id IN (?)", ids ] )
-    end
-  end
-
   def should_generate_new_friendly_id?
     slug.empty?
   end
