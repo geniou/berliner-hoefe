@@ -68,7 +68,8 @@ header {
     color: $dark_gray;
     margin-bottom: 20px;
     box-shadow: 1px 1px 5px black;
-    &.admin {
+    &.admin,
+    &.static {
       padding: 20px;
     }
   }
