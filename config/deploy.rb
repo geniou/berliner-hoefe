@@ -21,6 +21,6 @@ set :use_sudo, false
 
 namespace :uberspace do
   desc 'Kills running server, to be restarted automaticly'
-  task(:restart) { run "kill $(cat #{shared_path}/pids/server.pid)" }
+  task(:restart) { run "svc -du ~/service/rails-berliner-hoefe" }
 end
 after 'deploy:create_symlink', 'uberspace:restart'

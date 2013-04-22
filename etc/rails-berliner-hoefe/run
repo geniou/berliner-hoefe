@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# This is needed to find gems installed with --user-install
+export HOME=/home/geni
+
+# Include our profile to get Ruby 1.9.2 included in our PATH
+. $HOME/.bash_profile
+
+# Get into the project directory and start the Rails server
+cd $HOME/rails/berliner-hoefe/current
+exec bundle exec rails server -e production -p 3187
