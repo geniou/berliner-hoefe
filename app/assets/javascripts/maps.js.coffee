@@ -1,6 +1,4 @@
 $ ->
-  infoBoxTemplate = JST['locations/infoBox']
-
   # calculate map center
   center =
     latitude:
@@ -52,7 +50,7 @@ $ ->
       icon: icon
 
     info = new InfoBox(
-      content: infoBoxTemplate({location: location})
+      content: "<div class='name'>#{location.name}</div>"
       alignBottom: true
       pixelOffset: new google.maps.Size(-80, -12)
       closeBoxURL: ""
