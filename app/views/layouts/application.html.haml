@@ -10,7 +10,10 @@
   %body{ id: @body_id }
     %header
       .container
-        %h1= link_to 'Berliner Höfe', root_path
+        - if current_page? root_path
+          %h1= 'Berliner Höfe'
+        - else
+          %h1= link_to 'Berliner Höfe', root_path
     #content
       .container
         - if content_for?(:title)
