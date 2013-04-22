@@ -4,19 +4,23 @@
   %p= link_to "New Location", new_admin_location_path
 
   %table
-    %tr
-      %th Name
-      %th Type
-      %th published on
-      %th on map
-      %th show detail page
-    - for location in @locations
+    %thead
       %tr
-        %td= location.name
-        %td= location.classification
-        %td= location.published_on
-        %td= location.on_map
-        %td= location.show_detail
-        %td= link_to "Show", location
-        %td= link_to "Edit", edit_admin_location_path(location)
-        %td= link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete
+        %th Name
+        %th Type
+        %th published on
+        %th on map
+        %th has detail page
+        %th
+    %tbody
+      - for location in @locations
+        %tr
+          %td= location.name
+          %td= location.classification
+          %td= location.published_on
+          %td= location.on_map
+          %td= location.show_detail
+          %td
+            = link_to "Show", location
+            = link_to "Edit", edit_admin_location_path(location)
+            = link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete

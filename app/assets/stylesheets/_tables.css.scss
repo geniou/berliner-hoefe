@@ -1,11 +1,19 @@
 table {
   width: 100%;
-  border: 1px solid $gray;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid $light-gray;
   tr {
     td, th {
       padding: 3px;
-      border-bottom: 1px solid $gray;
-      border-right: 1px solid $gray;
+      border-bottom: 1px solid $light-gray;
+    }
+  }
+  tbody tr {
+    &:hover {
+      td {
+        background: $light-gray;
+      }
     }
   }
 }
