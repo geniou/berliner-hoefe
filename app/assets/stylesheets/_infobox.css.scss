@@ -12,11 +12,4 @@
   .close {
     display: none;
   }
-  &:after {
-    content: '';
-    @include triangle(bottom, 20px, 10px, rgba(255,255,255,0.95));
-    position: absolute;
-    bottom: -10px;
-    left: 70px;
-  }
 }

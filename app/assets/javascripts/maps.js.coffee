@@ -52,7 +52,7 @@ $ ->
     info = new InfoBox(
       content: "<div class='name'>#{location.name}</div>"
       alignBottom: true
-      pixelOffset: new google.maps.Size(-80, -12)
+      pixelOffset: new google.maps.Size(-80, -45)
       closeBoxURL: ""
       disableAutoPan: true
     )
@@ -113,7 +113,7 @@ $ ->
             position: latLng
             map: map
             draggable: true
-          google.maps.event.addListener(newMarker, 'dragged', (event) ->
+          google.maps.event.addListener(newMarker, 'dragend', (event) ->
             updateInput(event.latLng)
           )
         else
