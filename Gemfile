@@ -24,7 +24,3 @@ group :development do
   gem 'capistrano'
   gem 'brakeman'
 end
-
-group :production do
-  gem 'fcgi'
-end
