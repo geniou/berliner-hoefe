@@ -29,9 +29,12 @@ header,
 footer {
   > .container {
     width: 60%;
-    max-width: 1200px;
+    max-width: $max_width;
     @media only screen and (max-device-width: 480px) {
       width: 100%;
+    }
+    @media only screen and (max-width: $small_width + (($max_width - $small_width) / 2)) {
+      width: 80%;
     }
     @media only screen and (max-width: $small_width) {
       width: 100%;
