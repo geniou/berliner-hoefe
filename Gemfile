@@ -15,6 +15,7 @@ gem 'redcarpet'
 gem 'paperclip'
 gem 'uglifier'
 gem 'therubyracer'
+gem 'thin'
 
 group :test, :development do
   gem 'rspec-rails'
