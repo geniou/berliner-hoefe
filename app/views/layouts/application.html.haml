@@ -11,6 +11,7 @@
     <![endif]-->
     = yield(:head)
     %link{ href: "/favicon.ico", rel: "shortcut icon" }
+    = render 'layouts/ogm'
   %body{ id: @body_id }
     %header
       .container

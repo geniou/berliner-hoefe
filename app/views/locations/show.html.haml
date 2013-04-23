@@ -1,4 +1,5 @@
 - @title = @location.name
+- @page_image = @location.header_image.image.url(:small) if @location.header_image
 
 %article.section
   - if @location.header_image
