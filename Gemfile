@@ -19,6 +19,7 @@ gem 'thin'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do

@@ -47,6 +47,15 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capybara (2.0.3)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 1.0.0)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.1)
@@ -67,6 +76,7 @@ GEM
     fancybox2-rails (0.2.4)
       railties (>= 3.1.0)
     fastercsv (1.5.5)
+    ffi (1.6.0)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     friendly_id (4.0.9)
@@ -101,6 +111,7 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.5.9)
     paperclip (3.4.1)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
@@ -151,11 +162,17 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
+    rubyzip (0.9.9)
     sass (3.2.7)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.31.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
     sexp_processor (4.2.1)
     slim (1.3.8)
       temple (~> 0.6.3)
@@ -184,6 +201,9 @@ GEM
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     underscore-rails (1.4.4)
+    websocket (1.0.7)
+    xpath (1.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -191,6 +211,7 @@ PLATFORMS
 DEPENDENCIES
   brakeman
   capistrano
+  capybara
   coffee-rails
   fancybox2-rails
   formtastic
