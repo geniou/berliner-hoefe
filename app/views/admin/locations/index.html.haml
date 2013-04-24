@@ -7,7 +7,6 @@
     %thead
       %tr
         %th Name
-        %th Type
         %th published on
         %th on map
         %th has detail page
@@ -16,7 +15,6 @@
       - for location in @locations
         %tr
           %td= location.name
-          %td= location.classification
           %td= location.published_on
           %td= location.on_map
           %td= location.show_detail

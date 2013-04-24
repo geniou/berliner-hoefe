@@ -25,7 +25,7 @@ $ ->
   ###
     marker icon
   ###
-  get_icon = (marker_type) ->
+  get_icon = (marker_type = 'active') ->
     new google.maps.MarkerImage(
       app.config.map.marker.images[marker_type],
       new google.maps.Size(app.config.map.marker.size.width, app.config.map.marker.size.height),
@@ -40,9 +40,8 @@ $ ->
     center.add(location.latitude, location.longitude)
     position = new google.maps.LatLng(location.latitude, location.longitude)
 
-    marker_type = if location.additional != true then location.marker else 'additional'
-    icon = get_icon(marker_type)
-    icon_hover = get_icon(location.marker)
+    icon = get_icon(if location.additional then 'inactive')
+    icon_hover = get_icon()
 
     marker = new google.maps.Marker
       position: position

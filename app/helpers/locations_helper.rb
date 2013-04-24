@@ -7,7 +7,6 @@ module LocationsHelper
         :name => location.name,
         :latitude => location.latitude,
         :longitude => location.longitude,
-        :marker => location.classification.downcase,
         :url => location_path(location),
         :additional => options[:additional] || false,
         :show_detail => location.show_detail
