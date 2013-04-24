@@ -9,7 +9,6 @@ module LocationsHelper
         :longitude => location.longitude,
         :url => location_path(location),
         :additional => options[:additional] || false,
-        :show_detail => location.show_detail
       }
     end.to_json.html_safe
   end

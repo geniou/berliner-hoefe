@@ -4,7 +4,6 @@
     = f.input :description, input_html: { rows: 15 }
     = f.input :annotations, input_html: { rows: 3 }
     = f.input :slug, label: "URL", required: false
-    = f.input :show_detail, label: "Show detail page"
     = f.input :on_map, label: "On map"
     = f.input :published_on, label: "Published", as: :boolean
     = f.semantic_fields_for :header_image do |image|

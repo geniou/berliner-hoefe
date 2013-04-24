@@ -56,10 +56,9 @@ $ ->
       disableAutoPan: true
     )
 
-    if location.show_detail
-      google.maps.event.addListener(marker, 'click', ->
-        window.location.href = location.url
-      )
+    google.maps.event.addListener(marker, 'click', ->
+      window.location.href = location.url
+    )
 
     label = jQuery('[data-locationid='+location.id+']')
     google.maps.event.addListener(marker, 'mouseover', ->

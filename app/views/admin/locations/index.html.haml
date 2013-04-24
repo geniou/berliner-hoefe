@@ -9,7 +9,6 @@
         %th Name
         %th published on
         %th on map
-        %th has detail page
         %th
     %tbody
       - for location in @locations
@@ -17,7 +16,6 @@
           %td= location.name
           %td= location.published_on
           %td= location.on_map
-          %td= location.show_detail
           %td
             = link_to "Show", location
             = link_to "Edit", edit_admin_location_path(location)

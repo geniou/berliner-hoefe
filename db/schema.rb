@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424183627) do
+ActiveRecord::Schema.define(:version => 20130424184444) do
 
   create_table "images", :force => true do |t|
     t.integer  "location_id"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130424183627) do
     t.text     "description"
     t.datetime "published_on"
     t.string   "slug"
-    t.boolean  "show_detail"
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at",   :null => false
