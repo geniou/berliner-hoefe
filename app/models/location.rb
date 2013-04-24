@@ -28,4 +28,12 @@ class Location < ActiveRecord::Base
     nearbys.published.for_map.limit(8)
   end
 
+  def as_json(options = {})
+    super only: [:id, :name, :latitude, :longitude], methods: :url
+  end
+
+  def url
+    # simple way to have url for json
+    "/#{slug}"
+  end
 end

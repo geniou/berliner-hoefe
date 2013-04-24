@@ -20,6 +20,6 @@
 
 .section
   %script
-    app.map.locations = #{map_data([@location])}
-    app.map.nearby = #{map_data(@nearby.to_a, additional: true)}
+    app.map.locations = #{[@location].to_json.html_safe}
+    app.map.nearby = #{@nearby.to_json.html_safe}
   #map

@@ -36,11 +36,11 @@ $ ->
   ###
     add maker for given location to map
   ###
-  add_marker = (location, map) ->
+  add_marker = (location, map, additional) ->
     center.add(location.latitude, location.longitude)
     position = new google.maps.LatLng(location.latitude, location.longitude)
 
-    icon = get_icon(if location.additional then 'inactive')
+    icon = get_icon(if additional then 'inactive')
     icon_hover = get_icon()
 
     marker = new google.maps.Marker
@@ -87,7 +87,7 @@ $ ->
     # given locations
     locations = app.map.locations || []
     add_marker(location, map) for location in locations
-    add_marker(location, map) for location in app.map.nearby if app.map.nearby?
+    add_marker(location, map, true) for location in app.map.nearby if app.map.nearby?
 
     # set center
     map.setCenter(new google.maps.LatLng(center.get_latitude(), center.get_longitude()))
