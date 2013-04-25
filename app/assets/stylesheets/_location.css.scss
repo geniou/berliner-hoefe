@@ -11,7 +11,7 @@
     bottom: 20px;
     left: 20px;
     background: rgba(255, 255, 255, 0.8);
-    padding: 10px 15px 0;
+    padding: 5px 15px;
     color: #2a2a2a;
   }
 }
@@ -35,11 +35,12 @@
 }
 
 .annotations {
-  margin-top: 0;
+  margin: 0 auto;
+  padding-bottom: 30px;
   color: $gray;
   a {
     color: $gray;
-    text-decoratioN: underline;
+    text-decoratioN: none;
     &:hover {
       color: $dark_gray;
     }
@@ -57,7 +58,7 @@
 ul.images {
   list-style: none;
   margin-top: 40px;
-  padding: 0 0 20px;
+  padding: 0;
   li {
     display: inline-block;
     width: 15.5%;
