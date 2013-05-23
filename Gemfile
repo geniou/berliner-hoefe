@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'uglifier'
 gem 'therubyracer'
 gem 'thin'
+gem 'turbolinks'
 
 group :test, :development do
   gem 'rspec-rails'

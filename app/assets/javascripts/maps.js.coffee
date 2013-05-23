@@ -1,4 +1,4 @@
-$ ->
+window.onPageLoad ->
   # calculate map center
   center =
     latitude:
@@ -57,7 +57,7 @@ $ ->
     )
 
     google.maps.event.addListener(marker, 'click', ->
-      window.location.href = location.url
+      Turbolinks.visit(location.url)
     )
 
     label = jQuery('[data-locationid='+location.id+']')

@@ -14,4 +14,8 @@
     s = document.getElementsByTagName("script")[0]
     s.parentNode.insertBefore ga, s
   )()
+
+  # track turbolinks page views
+  document.addEventListener 'page:change', ->
+    _gaq.push(['_trackPageview'])
 <% end %>

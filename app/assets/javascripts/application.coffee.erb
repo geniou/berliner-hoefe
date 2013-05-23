@@ -3,6 +3,7 @@
 #= require underscore
 #= require fancybox
 #= require google_maps/infobox
+#= require turbolinks
 #= require_self
 #= require_tree .
 
@@ -10,3 +11,6 @@ window.app =
   config: {}
   map: {}
 
+window.onPageLoad = (callback) ->
+  document.addEventListener "page:change", callback
+  jQuery callback
