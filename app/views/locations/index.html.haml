@@ -1,3 +1,6 @@
+- content_for :head do
+  %meta{ name: 'description', content: 'Diese Seite gibt einen Einblick in die Hinterhöfe und Gewerbehöfe von Berlin. Anhand von Fotos und kurzen Texten zur Geschichte kann man die Vielfalt der meist verborgenen Höfe in Berlin entdecken.' }
+
 %script
   app.map.locations = #{@locations.to_json.html_safe}
   app.map.nearby = {}
