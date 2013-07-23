@@ -1,5 +1,6 @@
 class Image::Slideshow < Image
   attr_accessible :title, :position
+  validates_presence_of :image
 
   has_attached_file :image,
     styles: {

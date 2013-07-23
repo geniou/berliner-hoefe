@@ -10,9 +10,9 @@ class Location < ActiveRecord::Base
   has_many :slideshow_images, class_name: Image::Slideshow,
     dependent: :destroy, order: :position
   accepts_nested_attributes_for :slideshow_images, allow_destroy: true,
-    reject_if: proc { |attributes| !attributes['image'].present? }
+    reject_if: :all_blank
 
-  geocoded_by :latitude  => :latitude, :longitude => :longitude
+  geocoded_by latitude:  :latitude, longitude: :longitude
 
   scope :newest, order: "published_on DESC", limit: 8
   scope :for_map, conditions: { on_map: true }
