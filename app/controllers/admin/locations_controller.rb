@@ -1,4 +1,6 @@
 class Admin::LocationsController < Admin::ApplicationController
+  include LocationHelper
+
   def index
     @locations = Location.all
     @body_id = 'locations'
@@ -29,10 +31,10 @@ class Admin::LocationsController < Admin::ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    propperties = params[:location]
+    propperties = location_params
     propperties[:published_on] = propperties[:published_on] != '0' ? @location.published_on || Time.now : nil
     if @location.update_attributes(propperties)
-      redirect_to @location, notice:  "Successfully updated location."
+      redirect_to location_path(@location), notice:  "Successfully updated location."
     else
       render action: 'edit'
     end
@@ -42,5 +44,11 @@ class Admin::LocationsController < Admin::ApplicationController
     @location = Location.find(params[:id])
     @location.destroy
     redirect_to locations_url, notice: "Successfully destroyed location."
+  end
+
+  private
+
+  def location_params
+    params.require(:location).permit!
   end
 end

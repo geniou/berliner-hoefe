@@ -1,4 +1,3 @@
-# coding: utf-8
 module ApplicationHelper
 
   def markdown(text)
@@ -13,5 +12,4 @@ module ApplicationHelper
       title << ['Berlin Höfe']
     end.join(' | ')
   end
-
 end

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 4.0.0'
+
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'sass-rails'
@@ -9,8 +10,7 @@ gem 'coffee-rails'
 gem 'underscore-rails'
 gem 'fancybox2-rails'
 gem 'geocoder'
-gem 'friendly_id'
-gem 'formtastic'
+gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'redcarpet'
 gem 'paperclip'
 gem 'uglifier'

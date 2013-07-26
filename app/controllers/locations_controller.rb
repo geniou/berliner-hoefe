@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find(params[:id])
+    @location = Location.find_by_slug(params[:id])
     @footer_locations = @nearby = @location.nearbys_for_map
   end
 
