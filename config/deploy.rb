@@ -3,7 +3,7 @@ require 'bundler/capistrano'
 ssh_options[:forward_agent] = true
 
 set :application, 'berliner-hoefe'
-set :repository,  'git@bitbucket.org:geni/berliner-hoefe.git'
+set :repository,  'git@github.com:geniou/berliner-hoefe.git'
 
 server 'phoenix.uberspace.de', :app, :web, :db, primary: true
 
