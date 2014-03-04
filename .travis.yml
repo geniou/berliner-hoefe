@@ -1,0 +1,11 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.0.0-p0
+before_script:
+  - mysql -e 'create database `berliner-hoefe_test`;'
+  - rake db:test:load
+  - cp .rubocop.yml ~/
+script:
+  - bin/rspec -c spec
+  - bin/rubocop app lib spec config db
