@@ -1,0 +1,16 @@
+AllCops:
+  Excludes:
+    - bin/*
+    - db/schema.rb
+
+Documentation:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false

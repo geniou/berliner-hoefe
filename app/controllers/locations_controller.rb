@@ -1,5 +1,4 @@
 class LocationsController < ApplicationController
-
   def index
     @locations = Location.published.for_map
     @footer_locations = @locations.newest

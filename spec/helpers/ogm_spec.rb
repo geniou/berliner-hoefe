@@ -1,15 +1,15 @@
 require 'spec_helper'
 
 describe 'OgmHelper' do
-
   describe 'ogm_image' do
     subject { Capybara.string(helper.ogm_image(image_url)) }
     let(:request_url) { double('request_url') }
     let(:image_url) { double('image_url') }
 
     before do
-      URI.should_receive(:join).
-        with(request_url, image_url).and_return('absolute_image_url')
+      URI.should_receive(:join)
+        .with(request_url, image_url)
+        .and_return('absolute_image_url')
       helper.stub_chain(:request, url: request_url)
     end
 

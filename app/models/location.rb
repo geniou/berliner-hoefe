@@ -3,15 +3,15 @@ class Location < ActiveRecord::Base
   accepts_nested_attributes_for :header_image, allow_destroy: true
 
   has_many :slideshow_images, -> { order :position },
-    dependent: :destroy, class_name: Image::Slideshow
+           dependent: :destroy, class_name: Image::Slideshow
   accepts_nested_attributes_for :slideshow_images, allow_destroy: true,
-    reject_if: :all_blank
+                                                   reject_if: :all_blank
 
   geocoded_by latitude:  :latitude, longitude: :longitude
 
-  scope :newest, -> { order("published_on DESC").limit(8) }
+  scope :newest, -> { order('published_on DESC').limit(8) }
   scope :for_map, -> { where on_map: true }
-  scope :published, -> { where [ "published_on < ?", Time.now ] }
+  scope :published, -> { where ['published_on < ?', Time.now] }
 
   def nearbys_for_map
     nearbys.published.for_map.limit(8)

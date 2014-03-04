@@ -1,5 +1,4 @@
 module OgmHelper
-
   def ogm_image(image_url)
     content_tag :meta, nil, property: 'og:image', content: absolute_image_url(image_url)
   end

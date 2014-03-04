@@ -17,7 +17,7 @@ class Admin::LocationsController < Admin::ApplicationController
     propperties[:published_on] = propperties[:published_on] != 0 ? Time.now : nil
     @location = Location.new(propperties)
     if @location.save
-      redirect_to @location, notice: "Successfully created location."
+      redirect_to @location, notice: 'Successfully created location.'
     else
       render action: 'new'
     end
@@ -34,7 +34,7 @@ class Admin::LocationsController < Admin::ApplicationController
     propperties = location_params
     propperties[:published_on] = propperties[:published_on] != '0' ? @location.published_on || Time.now : nil
     if @location.update_attributes(propperties)
-      redirect_to location_path(@location), notice:  "Successfully updated location."
+      redirect_to location_path(@location), notice:  'Successfully updated location.'
     else
       render action: 'edit'
     end
@@ -43,7 +43,7 @@ class Admin::LocationsController < Admin::ApplicationController
   def destroy
     @location = Location.find(params[:id])
     @location.destroy
-    redirect_to locations_url, notice: "Successfully destroyed location."
+    redirect_to locations_url, notice: 'Successfully destroyed location.'
   end
 
   private
