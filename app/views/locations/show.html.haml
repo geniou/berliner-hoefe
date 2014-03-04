@@ -13,7 +13,7 @@
     - @location.slideshow_images.each do |image|
       %li
         = link_to(image_tag(image.image.url(:small), alt: image.title),
-          image_path(image.image.url(:large)), { title: image.title, data: { slideshow: 'true' } })
+          image_path(image.image.url(:large)), title: image.title, data: { slideshow: 'true' })
 
   - unless @location.annotations.blank?
     .annotations= markdown(@location.annotations)

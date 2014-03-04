@@ -1,10 +1,10 @@
 - if @footer_locations
   %ul
     - @footer_locations.each do |location|
-      %li=link_to location.name, location_path(location), { data: { locationid: location.id } }
+      %li= link_to location.name, location_path(location), data: { locationid: location.id }
 
 %ul
   %li= link_to 'Startseite', root_path
-  %li= link_to 'Facebook', "https://www.facebook.com/berlinerHoefe"
+  %li= link_to 'Facebook', 'https://www.facebook.com/berlinerHoefe'
   %li= link_to 'Kontakt', contact_path
   %li= link_to 'Impressum', imprint_path

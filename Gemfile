@@ -27,6 +27,7 @@ group :development do
   gem 'capistrano', '< 3.0'
   gem 'brakeman'
   gem 'rubocop'
+  gem 'haml-lint'
   gem 'spring'
   gem 'spring-commands-rspec'
 end

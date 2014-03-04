@@ -1,23 +1,23 @@
-= semantic_form_for [:admin, @location], :html => { :multipart => true } do |f|
+= semantic_form_for [:admin, @location], html: { multipart: true } do |f|
   = f.inputs do
     = f.input :name
     = f.input :description, input_html: { rows: 15 }
     = f.input :annotations, input_html: { rows: 3 }
-    = f.input :slug, label: "URL", required: false
-    = f.input :on_map, label: "On map"
-    = f.input :published_on, label: "Published", as: :boolean
+    = f.input :slug, label: 'URL', required: false
+    = f.input :on_map, label: 'On map'
+    = f.input :published_on, label: 'Published', as: :boolean
     = f.semantic_fields_for :header_image do |image|
-      - unless image.object.new_record?
-        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
+      - if image.object.new_record?
+        = image.input :image, as: :file, label: 'Header image'
       - else
-        = image.input :image, as: :file, label: "Header image"
+        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
     = f.semantic_fields_for :slideshow_images do |image|
       %fieldset{ class: image.object.new_record? ? '' : 'open' }
         %legend Image
-        - unless image.object.new_record?
-          = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
+        - if image.object.new_record?
+          = image.input :image, as: :file, label: 'Add Image'
         - else
-          = image.input :image, as: :file, label: "Add Image"
+          = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
         = image.input :title
         = image.input :position
 

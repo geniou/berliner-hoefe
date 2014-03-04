@@ -70,6 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    colorize (0.5.8)
     daemons (1.1.9)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -81,6 +82,10 @@ GEM
     geocoder (1.1.9)
     haml (4.0.5)
       tilt
+    haml-lint (0.4.1)
+      colorize (= 0.5.8)
+      haml (>= 4.0)
+      rubocop (>= 0.16.0)
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
@@ -222,6 +227,7 @@ DEPENDENCIES
   fancybox2-rails (= 0.2.4)
   formtastic!
   geocoder
+  haml-lint
   haml-rails
   jquery-rails
   mysql2

@@ -1,7 +1,7 @@
 %article.section.admin
   %h1 Locations
 
-  %p= link_to "New Location", new_admin_location_path
+  %p= link_to 'New Location', new_admin_location_path
 
   %table
     %thead
@@ -11,12 +11,12 @@
         %th on map
         %th
     %tbody
-      - for location in @locations
+      - @locations.each do
         %tr
           %td= location.name
           %td= location.published_on
           %td= location.on_map
           %td
-            = link_to "Show", location
-            = link_to "Edit", edit_admin_location_path(location)
-            = link_to "Destroy", admin_locations_path, :confirm => 'Are you sure?', :method => :delete
+            = link_to 'Show', location
+            = link_to 'Edit', edit_admin_location_path(location)
+            = link_to 'Destroy', admin_locations_path, confirm: 'Are you sure?', method: :delete
