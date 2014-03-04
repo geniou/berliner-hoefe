@@ -1,0 +1,13 @@
+exclude:
+  - 'app/assets/stylesheets/_triangle.scss'
+
+linters:
+  EmptyLineBetweenBlocks:
+    enabled: false
+
+  CapitalizationInSelector:
+    exclude:
+      - 'app/assets/stylesheets/_infobox.css.scss'
+
+  SelectorDepth:
+    max_depth: 4

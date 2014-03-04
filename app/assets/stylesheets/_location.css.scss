@@ -1,30 +1,30 @@
 .header-image {
   position: relative;
   img {
-    width: 100%;
     box-shadow: 0 2px 2px $dark-gray;
+    width: 100%;
   }
   h1 {
+    background: rgba(255, 255, 255, .8);
+    bottom: 20px;
+    color: #2a2a2a;
+    left: 20px;
     margin: 0;
     padding: 0;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.8);
     padding: 5px 15px;
-    color: #2a2a2a;
+    position: absolute;
   }
 }
 
 .description,
 .annotations,
 .images {
-  width: 80%;
   margin: 30px auto;
+  width: 80%;
   @media only screen and (max-device-width: 480px) {
     width: 90%;
   }
-  @media only screen and (max-width: $small_width) {
+  @media only screen and (max-width: $small-width) {
     width: 90%;
   }
 }
@@ -35,14 +35,14 @@
 }
 
 .annotations {
+  color: $gray;
   margin: 0 auto;
   padding-bottom: 30px;
-  color: $gray;
   a {
     color: $gray;
-    text-decoratioN: none;
+    text-decoration: none;
     &:hover {
-      color: $dark_gray;
+      color: $dark-gray;
     }
   }
   ul {
@@ -60,13 +60,13 @@ ul.images {
   margin-top: 40px;
   padding: 0;
   li {
+    background: #fff;
+    box-shadow: 0 0 2px 2px $light-gray;
     display: inline-block;
-    width: 15.5%;
-    margin-right: 1.5%;
     margin-bottom: 15px;
-    background: white;
+    margin-right: 1.5%;
     padding: 1%;
-    box-shadow: 0 0 2px 2px $light_gray;
+    width: 15.5%;
     &:nth-child(5n) {
       margin-right: 0;
     }
@@ -81,9 +81,9 @@ ul.images {
       }
     }
     img {
+      border: 1px solid $light-gray;
+      opacity: .9;
       width: 100%;
-      border: 1px solid $light_gray;
-      opacity: 0.9;
       &:hover {
         opacity: 1;
       }

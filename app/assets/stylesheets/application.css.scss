@@ -3,18 +3,18 @@
 //= require_self
 
 // settings and mixings
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 // external
 @import url(//fonts.googleapis.com/css?family=Lancelot);
-@import "infobox";
+@import 'infobox';
 
 // layout
-@import "layout";
-@import "tables";
-@import "forms";
+@import 'layout';
+@import 'tables';
+@import 'forms';
 
 // components
-@import "location";
-@import "map";
+@import 'location';
+@import 'map';

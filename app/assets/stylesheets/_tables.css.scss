@@ -1,12 +1,13 @@
 table {
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
   border: 1px solid $light-gray;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
   tr {
-    td, th {
-      padding: 3px;
+    td,
+    th {
       border-bottom: 1px solid $light-gray;
+      padding: 3px;
     }
   }
   tbody tr {

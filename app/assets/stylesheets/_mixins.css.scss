@@ -1,12 +1,12 @@
-@import "triangle";
+@import 'triangle';
 
 @mixin stripes ($color, $d:5) {
-  $color_darker: darken($color, 7%);
+  $color-darker: darken($color, 7%);
   background: {
     color: $color;
-    image: linear-gradient(rgba(red($color_darker), green($color_darker), blue($color_darker), 0) 10%, $color_darker 70%), repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
-    image: -moz-linear-gradient(rgba(red($color_darker), green($color_darker), blue($color_darker), 0) 10%, $color_darker 70%), -moz-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
-    image: -o-linear-gradient(rgba(red($color_darker), green($color_darker), blue($color_darker), 0) 10%, $color_darker 70%), -o-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
-    image: -webkit-linear-gradient(rgba(red($color_darker), green($color_darker), blue($color_darker), 0) 10%, $color_darker 70%), -webkit-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255,255,255,.05) $d * 1px, rgba(255,255,255,.1) $d * 2px);
+    image: linear-gradient(rgba(red($color-darker), green($color-darker), blue($color-darker), 0) 10%, $color-darker 70%), repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255, 255, 255, .05) $d * 1px, rgba(255, 255, 255, .1) $d * 2px);
+    image: -moz-linear-gradient(rgba(red($color-darker), green($color-darker), blue($color-darker), 0) 10%, $color-darker 70%), -moz-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255, 255, 255, .05) $d * 1px, rgba(255, 255, 255, .1) $d * 2px);
+    image: -o-linear-gradient(rgba(red($color-darker), green($color-darker), blue($color-darker), 0) 10%, $color-darker 70%), -o-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255, 255, 255, .05) $d * 1px, rgba(255, 255, 255, .1) $d * 2px);
+    image: -webkit-linear-gradient(rgba(red($color-darker), green($color-darker), blue($color-darker), 0) 10%, $color-darker 70%), -webkit-repeating-linear-gradient(315deg, transparent, transparent $d * 1px, rgba(255, 255, 255, .05) $d * 1px, rgba(255, 255, 255, .1) $d * 2px);
   }
 }
