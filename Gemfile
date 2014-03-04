@@ -8,7 +8,7 @@ gem 'sass-rails'
 gem 'haml-rails'
 gem 'coffee-rails'
 gem 'underscore-rails'
-gem 'fancybox2-rails'
+gem 'fancybox2-rails', '0.2.4'
 gem 'geocoder'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'redcarpet'
@@ -24,7 +24,9 @@ group :test, :development do
 end
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', '< 3.0'
   gem 'brakeman'
   gem 'rubocop'
+  gem 'spring'
+  gem 'spring-commands-rspec'
 end
