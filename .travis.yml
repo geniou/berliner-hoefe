@@ -6,6 +6,9 @@ before_script:
   - mysql -e 'create database `berliner-hoefe_test`;'
   - rake db:test:load
   - cp .rubocop.yml ~/
+  - gem install scss-lint
 script:
   - bin/rspec -c spec
   - bin/rubocop app lib spec config db
+  - bin/haml-lint app/views
+  - scss-lint app/assets/stylesheets
