@@ -22,3 +22,15 @@ namespace :uberspace do
   task(:restart) { run 'svc -du ~/service/rails-berliner-hoefe' }
 end
 after 'deploy:create_symlink', 'uberspace:restart'
+
+namespace :http_auth do
+  desc 'setup http_auth'
+  task :setup do
+    run %{
+      content=$(cat #{File.join(shared_path, 'auth')});
+      sed -i "s/# http_basic_authenticate/${content}/g" \
+        #{File.join(release_path, 'app', 'controllers', 'admin', 'application_controller.rb')}
+      }
+  end
+end
+after 'deploy:update_code', 'http_auth:setup'
