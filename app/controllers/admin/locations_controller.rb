@@ -13,11 +13,11 @@ class Admin::LocationsController < Admin::ApplicationController
   end
 
   def create
-    propperties = params[:location]
+    propperties = location_params
     propperties[:published_on] = propperties[:published_on] != 0 ? Time.now : nil
     @location = Location.new(propperties)
     if @location.save
-      redirect_to @location, notice: 'Successfully created location.'
+      redirect_to @location.url, notice: 'Successfully created location.'
     else
       render action: 'new'
     end

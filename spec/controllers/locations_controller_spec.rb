@@ -5,8 +5,8 @@ describe LocationsController do
     let(:location) { double(:location) }
 
     before do
-      Location.should_receive(:find_by_slug)
-        .with('foo')
+      Location.should_receive(:find_by!)
+        .with(slug: 'foo')
         .and_return(location)
       location.should_receive(:nearbys_for_map)
     end

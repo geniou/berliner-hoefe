@@ -14,6 +14,7 @@ class Location < ActiveRecord::Base
   scope :published, -> { where ['published_on < ?', Time.now] }
 
   def nearbys_for_map
+    return unless nearbys
     nearbys.published.for_map.limit(8)
   end
 

@@ -12,7 +12,7 @@ gem 'fancybox2-rails', '0.2.4'
 gem 'geocoder'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'redcarpet'
-gem 'paperclip'
+gem 'paperclip', '~> 3.5'
 gem 'uglifier'
 gem 'therubyracer'
 gem 'thin'
@@ -20,6 +20,7 @@ gem 'turbolinks'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'database_cleaner'
   gem 'capybara'
 end
 

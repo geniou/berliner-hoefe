@@ -72,6 +72,7 @@ GEM
     coffee-script-source (1.7.0)
     colorize (0.5.8)
     daemons (1.1.9)
+    database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -116,7 +117,7 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    paperclip (4.1.1)
+    paperclip (3.5.4)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
@@ -224,6 +225,7 @@ DEPENDENCIES
   capistrano (< 3.0)
   capybara
   coffee-rails
+  database_cleaner
   fancybox2-rails (= 0.2.4)
   formtastic!
   geocoder
@@ -231,7 +233,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   mysql2
-  paperclip
+  paperclip (~> 3.5)
   rails (~> 4.0.0)
   redcarpet
   rspec-rails
