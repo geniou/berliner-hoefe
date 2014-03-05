@@ -11,7 +11,7 @@
         %th on map
         %th
     %tbody
-      - @locations.each do
+      - @locations.each do |location|
         %tr
           %td= location.name
           %td= location.published_on
