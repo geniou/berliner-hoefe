@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/justinfrench/formtastic.git
-  revision: a035bff2febd803945f6e3e20ee8ecc4b911ef8f
+  revision: 619fc6ba77a9b4b67d23232a7a8bb6f197652803
   specs:
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
@@ -105,7 +105,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
-    multi_json (1.8.4)
+    multi_json (1.9.0)
     mysql2 (0.3.15)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
@@ -121,7 +121,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    parser (2.1.5)
+    parser (2.1.7)
       ast (~> 1.1)
       slop (~> 3.4, >= 3.4.5)
     polyglot (0.3.4)
@@ -195,7 +195,7 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thin (1.6.1)
+    thin (1.6.2)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
