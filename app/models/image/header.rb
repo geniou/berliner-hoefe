@@ -4,4 +4,6 @@ class Image::Header < Image
     small: '400x160>',
     large: '1200'
   }
+  validates_attachment_content_type :image,
+    content_type: %w(image/jpg image/jpeg image/png)
 end
