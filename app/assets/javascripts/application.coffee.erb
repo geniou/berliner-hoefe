@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require underscore
 #= require fancybox
@@ -10,7 +11,3 @@
 window.app =
   config: {}
   map: {}
-
-window.onPageLoad = (callback) ->
-  document.addEventListener "page:change", callback
-  jQuery callback

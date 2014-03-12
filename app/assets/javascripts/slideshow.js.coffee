@@ -1,4 +1,4 @@
-window.onPageLoad ->
+jQuery ->
   jQuery("[data-slideshow='true']")
     .attr("rel", "slideshow")
     .fancybox

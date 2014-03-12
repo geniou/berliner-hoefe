@@ -77,8 +77,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    fancybox2-rails (0.2.4)
-      railties (>= 3.1.0)
+    fancybox2-rails (0.2.8)
+      railties (>= 3.1.0, < 5.0)
     fastercsv (1.5.5)
     geocoder (1.1.9)
     haml (4.0.5)
@@ -98,6 +98,9 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.0.1)
+      railties (>= 3.1.0)
+      turbolinks
     json (1.8.1)
     libv8 (3.16.14.3)
     mail (2.5.4)
@@ -209,7 +212,7 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (2.2.1)
       coffee-rails
-    tzinfo (0.3.38)
+    tzinfo (0.3.39)
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -226,12 +229,13 @@ DEPENDENCIES
   capybara
   coffee-rails
   database_cleaner
-  fancybox2-rails (= 0.2.4)
+  fancybox2-rails
   formtastic!
   geocoder
   haml-lint
   haml-rails
   jquery-rails
+  jquery-turbolinks
   mysql2
   paperclip (~> 3.5)
   rails (~> 4.0.0)

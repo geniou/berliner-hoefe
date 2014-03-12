@@ -1,4 +1,4 @@
-window.onPageLoad ->
+jQuery ->
   # calculate map center
   center =
     latitude:
