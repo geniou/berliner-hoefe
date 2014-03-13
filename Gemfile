@@ -4,6 +4,7 @@ gem 'rails', '~> 4.0.0'
 
 gem 'mysql2'
 gem 'jquery-rails'
+gem 'sprockets', '2.11.0'
 gem 'sass-rails'
 gem 'haml-rails'
 gem 'coffee-rails'

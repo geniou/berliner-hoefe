@@ -1,3 +1,5 @@
-class Admin::ApplicationController < ApplicationController
+module Admin
+  class ApplicationController < ApplicationController
   # http_basic_authenticate
+  end
 end
