@@ -26,7 +26,9 @@ group :test, :development do
 end
 
 group :development do
-  gem 'capistrano', '< 3.0'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
   gem 'brakeman'
   gem 'rubocop'
   gem 'haml-lint'
