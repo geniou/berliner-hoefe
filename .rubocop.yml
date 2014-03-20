@@ -2,30 +2,14 @@ AllCops:
   Excludes:
     - bin/*
     - db/schema.rb
+    - vendor/**/*
 
 Documentation:
-  Enabled: false
-
-FileName:
   Enabled: false
 
 LineLength:
   Enabled: false
 
 MethodLength:
-  Enabled: false
-
-NumericLiterals:
-  Enabled: false
-
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%':  '{}'
-    '%i': '[]'
-    '%q': ()
-    '%Q': ()
-    '%r': '{}'
-    '%s': ()
-    '%w': '[]'
-    '%W': '[]'
-    '%x': ()
+  Exclude:
+    - db/migrate/*
