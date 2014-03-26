@@ -4,8 +4,7 @@ rvm:
   - 2.1.0
 before_script:
   - mysql -e 'create database `berliner-hoefe_test`;'
-  - rake db:test:load
-  - cp .rubocop.yml ~/
+  - bin/rake db:test:load
 script:
   - bin/rspec -c spec
   - bin/rubocop -R

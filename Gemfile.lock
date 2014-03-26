@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/causes/haml-lint.git
-  revision: 2b239a57a2f3422ba3c60f1a46761345ca748057
-  specs:
-    haml-lint (0.4.1)
-      colorize (= 0.5.8)
-      haml (>= 4.0)
-      rubocop (>= 0.16.0)
-
-GIT
   remote: git://github.com/justinfrench/formtastic.git
   revision: 619fc6ba77a9b4b67d23232a7a8bb6f197652803
   specs:
@@ -16,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 9ee29f361f5a7233667472cf03f11cc64c2738c6
+  revision: 113198f979bc793882506114fcc3dc9f6c4e4575
   specs:
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -54,17 +45,6 @@ GEM
     arel (4.0.2)
     ast (1.1.0)
     atomic (1.1.16)
-    brakeman (2.4.1)
-      erubis (~> 2.6)
-      fastercsv (~> 1.5)
-      haml (>= 3.0, < 5.0)
-      highline (~> 1.6.20)
-      multi_json (~> 1.2)
-      ruby2ruby (~> 2.0.5)
-      ruby_parser (~> 3.4.0)
-      sass (~> 3.0)
-      slim (>= 1.3.6, < 3.0)
-      terminal-table (~> 1.4)
     builder (3.1.4)
     capistrano (3.1.0)
       i18n
@@ -105,16 +85,18 @@ GEM
     execjs (2.0.2)
     fancybox2-rails (0.2.8)
       railties (>= 3.1.0, < 5.0)
-    fastercsv (1.5.5)
     geocoder (1.1.9)
     haml (4.0.5)
       tilt
+    haml-lint (0.5.0)
+      colorize (= 0.5.8)
+      haml (>= 4.0)
+      rubocop (>= 0.16.0)
     haml-rails (0.5.3)
       actionpack (>= 4.0.1)
       activesupport (>= 4.0.1)
       haml (>= 3.1, < 5.0)
       railties (>= 4.0.1)
-    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.1.0)
@@ -129,7 +111,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_portile (0.5.2)
+    mini_portile (0.5.3)
     minitest (4.7.5)
     multi_json (1.9.2)
     mysql2 (0.3.15)
@@ -160,14 +142,14 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
-    rake (10.1.1)
+    rake (10.2.1)
     redcarpet (3.1.1)
     ref (1.0.5)
     rspec-core (2.14.8)
     rspec-expectations (2.14.5)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.14.6)
-    rspec-rails (2.14.1)
+    rspec-rails (2.14.2)
       actionpack (>= 3.0)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -182,23 +164,14 @@ GEM
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.4.2)
-    ruby2ruby (2.0.7)
-      ruby_parser (~> 3.1)
-      sexp_processor (~> 4.0)
-    ruby_parser (3.4.1)
-      sexp_processor (~> 4.1)
-    sass (3.3.3)
+    sass (3.3.4)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    scss-lint (0.19.0)
+    scss-lint (0.20.1)
       colorize (= 0.5.8)
       sass (~> 3.3.0)
-    sexp_processor (4.4.2)
-    slim (2.0.2)
-      temple (~> 0.6.6)
-      tilt (>= 1.3.3, < 2.1)
     slop (3.5.0)
     spring (1.1.2)
     spring-commands-rspec (1.0.1)
@@ -216,10 +189,8 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh
       term-ansicolor
-    temple (0.6.7)
     term-ansicolor (1.3.0)
       tins (~> 1.0)
-    terminal-table (1.4.5)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -227,8 +198,8 @@ GEM
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
       rack (>= 1.0.0)
-    thor (0.18.1)
-    thread_safe (0.2.0)
+    thor (0.19.1)
+    thread_safe (0.3.1)
       atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     tins (1.0.1)
@@ -249,7 +220,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  brakeman
   capistrano
   capistrano-rails
   capistrano-rbenv
@@ -259,7 +229,7 @@ DEPENDENCIES
   fancybox2-rails
   formtastic!
   geocoder
-  haml-lint!
+  haml-lint
   haml-rails
   jquery-rails
   jquery-turbolinks

@@ -30,10 +30,9 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
-  gem 'brakeman'
   gem 'rubocop'
   gem 'scss-lint', '> 0.17'
-  gem 'haml-lint', github: 'causes/haml-lint'
+  gem 'haml-lint'
   gem 'spring'
   gem 'spring-commands-rspec'
 end
