@@ -14,13 +14,10 @@ gem 'geocoder'
 gem 'formtastic', github: 'justinfrench/formtastic'
 gem 'redcarpet'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'uglifier'
-gem 'therubyracer'
-gem 'thin'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
-group :test, :development do
+group :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'capybara'
@@ -35,4 +32,10 @@ group :development do
   gem 'haml-lint'
   gem 'spring'
   gem 'spring-commands-rspec'
+end
+
+group :production do
+  gem 'uglifier'
+  gem 'therubyracer'
+  gem 'thin'
 end
