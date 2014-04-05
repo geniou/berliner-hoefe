@@ -1,6 +1,6 @@
 class AddPositionAndTitleToImages < ActiveRecord::Migration
   def up
-    add_column    :images, :position, :integer
+    add_column :images, :position, :integer
     rename_column :images, :image_title, :title
   end
 
