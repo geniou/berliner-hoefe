@@ -12,7 +12,7 @@ gem 'underscore-rails'
 gem 'fancybox2-rails'
 gem 'geocoder'
 gem 'redcarpet'
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
