@@ -1,29 +1,62 @@
-= semantic_form_for [:admin, @location], html: { multipart: true } do |f|
-  = f.inputs do
-    = f.input :name
-    = f.input :description, input_html: { rows: 15 }
-    = f.input :annotations, input_html: { rows: 3 }
-    = f.input :slug, label: 'URL', required: false
-    = f.input :on_map, label: 'On map'
-    = f.input :published_on, label: 'Published', as: :boolean
-    = f.semantic_fields_for :header_image do |image|
-      - if image.object.new_record?
-        = image.input :image, as: :file, label: 'Header image'
-      - else
-        = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
-    = f.semantic_fields_for :slideshow_images do |image|
-      %fieldset{ class: image.object.new_record? ? '' : 'open' }
-        %legend Image
+= form_for [:admin, @location], html: { multipart: true } do |f|
+  %ul
+    %li
+      = f.label :name
+      = f.text_field :name
+
+    %li
+      = f.label :description
+      = f.text_area :description, input_html: { rows: 15 }
+
+    %li
+      = f.label :annotations
+      = f.text_area :annotations, input_html: { rows: 3 }
+
+    %li
+      = f.label :slug, 'URL'
+      = f.text_field :slug, required: false
+
+    %li
+      = f.label :on_map
+      = f.check_box :on_map
+
+    %li
+      = f.label :published_on, 'Published'
+      = f.check_box :published_on
+
+    %li
+      = f.fields_for :header_image do |image|
         - if image.object.new_record?
-          = image.input :image, as: :file, label: 'Add Image'
+          = image.label :image, 'Header image'
+          = image.file_field :image
         - else
-          = image.input :_destroy, as: :boolean, label: image_tag(image.object.image.url(:thumb))
-        = image.input :title
-        = image.input :position
+          = image.label :_destroy, image_tag(image.object.image.url(:thumb))
+          = image.check_box :_destroy
 
-  #map.map
+    %li
+      = f.fields_for :slideshow_images do |image|
+        %fieldset
+          %legend Image
+          %ul.inputs
+            %li
+              - if image.object.new_record?
+                = image.label :image, 'Add Image'
+                = image.file_field :image
+              - else
+                = image.label :_destroy, image_tag(image.object.image.url(:thumb))
+                = image.check_box :_destroy, as: :boolean
 
-  = f.hidden_field :latitude
-  = f.hidden_field :longitude
-  = f.actions do
-    = f.action :submit
+            %li
+              = image.label :title
+              = image.text_field :title
+
+            %li
+            = image.label :position
+            = image.text_field :position
+
+    %li
+      #map.map
+      = f.hidden_field :latitude
+      = f.hidden_field :longitude
+
+  = f.submit @location.new_record? ? 'Create location' : 'Update location'

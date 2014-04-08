@@ -52,7 +52,7 @@ feature 'Location' do
     find(:xpath, '//input[@id="location_longitude"]').set '13.000'
     check 'On map'
     check 'Published'
-    click_button 'Create Location'
+    click_button 'Create location'
   end
 
   def new_location_exists

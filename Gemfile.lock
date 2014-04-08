@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/justinfrench/formtastic.git
-  revision: ead97006985af93f9de66f53646be0870777bfd0
-  specs:
-    formtastic (2.3.0.rc2)
-      actionpack (>= 3.0)
-
-GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 41da3a3c4c139964a9877c77220f94200d73c87a
   specs:
@@ -227,7 +220,6 @@ DEPENDENCIES
   coffee-rails
   database_cleaner
   fancybox2-rails
-  formtastic!
   geocoder
   haml-lint
   haml-rails

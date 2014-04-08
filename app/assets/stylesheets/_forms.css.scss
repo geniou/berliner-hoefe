@@ -1,17 +1,51 @@
-.formtastic fieldset fieldset {
-  border: 1px solid $light-gray;
-  margin: 1em 0;
-  padding: 0 1em .5em;
-  legend {
-    cursor: pointer;
-  }
-  li {
-    display: none;
-  }
-  &.open {
-    padding: 1em;
+form {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
     li {
       display: block;
+      margin-bottom: .5em;
+    }
+  }
+
+  label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 1em 0 .4em;
+    vertical-align: top;
+    width: 19%;
+  }
+
+  input[type=text],
+  textarea {
+    border: 1px solid #9c9e9f;
+    border-radius: 0;
+    -moz-box-sizing: border-box;
+    color: inherit;
+    display: inline-block;
+    padding: .4em;
+    width: 80%;
+
+    &:focus {
+      border-color: #ff9b23;
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  fieldset {
+    .inputs {
+      display: none;
+    }
+    &.open {
+      .inputs {
+        display: block;
+      }
     }
   }
 }
