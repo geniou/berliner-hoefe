@@ -1,2 +1,0 @@
-# Be sure to restart your server when you modify this file.
-BerlinerHoefe::Application.config.secret_key_base = '095c17b1821716ba1cd07de0c78bb68ebd70a012fab4e1759713dd7e084aac63f61982294ebbdc03bed8520b42cac0444b10fed88be8d36c46d4b0b47797c0f4'
