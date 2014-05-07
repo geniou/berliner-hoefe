@@ -1,5 +1,3 @@
-lock '3.1.0'
-
 set :application, 'berliner-hoefe'
 set :repo_url, 'git@github.com:geniou/berliner-hoefe.git'
 
