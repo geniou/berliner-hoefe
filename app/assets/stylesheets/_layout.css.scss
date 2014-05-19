@@ -78,18 +78,18 @@ header {
   }
 }
 
-footer > .container {
-  background: $super-dark-gray;
-  color: $light-gray;
-  padding: 20px 0 0;
-  a {
-    color: $dark-gray;
-    &.highlighted {
-      color: #fff;
+footer {
+  > .container {
+    background: $super-dark-gray;
+    color: $light-gray;
+    padding: 20px 0 0;
+    a {
+      color: $dark-gray;
+      &.highlighted {
+        color: #fff;
+      }
     }
   }
-}
-footer {
   ul {
     list-style: none;
     margin: 0;
