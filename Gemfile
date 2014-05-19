@@ -27,6 +27,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'rubocop'
+  gem 'rubocop-rspec', '~> 1.0.rc1'
   gem 'scss-lint', '> 0.17'
   gem 'haml-lint'
   gem 'spring'
