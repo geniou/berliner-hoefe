@@ -27,9 +27,9 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'rubocop'
-  gem 'rubocop-rspec', '~> 1.0.rc1'
+  gem 'rubocop-rspec'
   gem 'scss-lint', '> 0.17'
-  gem 'haml-lint'
+  gem 'haml-lint', github: 'geniou/haml-lint', branch: 'rubocop_names'
   gem 'spring'
   gem 'spring-commands-rspec'
 end

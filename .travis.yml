@@ -7,6 +7,6 @@ before_script:
   - bin/rake db:test:load
 script:
   - bin/rspec -c spec
-  - bin/rubocop -R --require rubocop-rspec
+  - bin/rubocop -R
   - bin/haml-lint app/views
   - bin/scss-lint app/assets/stylesheets
