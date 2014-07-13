@@ -57,22 +57,22 @@ feature 'Location' do
 
   def new_location_exists
     Location.find_by(slug: 'foo').tap do |location|
-      location.name.should eq 'Foo Location'
-      location.description.should eq 'Foo Description'
-      location.annotations.should eq 'Foo Annotations'
-      location.latitude.should eq 52.000
-      location.longitude.should eq 13.000
-      location.published_on.should_not be_nil
-      location.on_map.should be_true
+      expect(location.name).to eq 'Foo Location'
+      expect(location.description).to eq 'Foo Description'
+      expect(location.annotations).to eq 'Foo Annotations'
+      expect(location.latitude).to eq 52.000
+      expect(location.longitude).to eq 13.000
+      expect(location.published_on).not_to be_nil
+      expect(location.on_map).to be_truthy
     end
   end
 
   def see_location
     within('#content') do
-      page.should have_selector('h1', text: 'Foo Location')
-      page.should have_selector('.description', text: 'Foo Description')
-      page.should have_selector('.annotations', text: 'Foo Annotations')
-      page.should have_selector('.images a[title="Foo Image"] img[alt="Foo Image"]')
+      expect(page).to have_selector('h1', text: 'Foo Location')
+      expect(page).to have_selector('.description', text: 'Foo Description')
+      expect(page).to have_selector('.annotations', text: 'Foo Annotations')
+      expect(page).to have_selector('.images a[title="Foo Image"] img[alt="Foo Image"]')
     end
   end
 end
