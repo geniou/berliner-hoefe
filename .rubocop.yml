@@ -6,12 +6,16 @@ AllCops:
     - db/schema.rb
     - vendor/**/*
 
-Documentation:
+Style/Documentation:
   Enabled: false
 
-LineLength:
+Metrics/LineLength:
   Enabled: false
 
-MethodLength:
+Metrics/MethodLength:
   Exclude:
     - db/migrate/*
+
+Metrics/AbcSize:
+  Exclude:
+    - spec/**/*

@@ -31,7 +31,6 @@ set :linked_dirs, %w(bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # set :keep_releases, 5
 
 namespace :deploy do
-
   desc 'Restart application'
   after :publishing, :restart do
     on roles(:app), in: :sequence, wait: 5 do

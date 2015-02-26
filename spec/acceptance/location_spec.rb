@@ -2,7 +2,6 @@ require 'spec_helper'
 include ActionDispatch::TestProcess
 
 feature 'Location' do
-
   scenario 'Create location' do
     go_to_admin_page
     create_new_location
